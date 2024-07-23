@@ -10,7 +10,6 @@ Welcome to the Bookstore Website project! This web application allows users to b
 - 📝 **Book Details**: View detailed information about each book, including reviews and ratings.
 
 
-
 ## 🛠️ Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript (Vanilla JS)
