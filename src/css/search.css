@@ -50,6 +50,7 @@
 .bookImg {
   width: 220px;
   height: 306px;
+  padding-left: 20px;
 }
 
 .textDiv {
@@ -67,7 +68,7 @@
   font-size: 18px;
   font-weight: 400;
 }
-
+ 
 .textDiv span {
   font-size: 14px;
   font-weight: 400px;
