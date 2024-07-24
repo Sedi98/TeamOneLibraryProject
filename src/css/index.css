@@ -82,117 +82,123 @@
   font-weight: 700;
 }
 
-
-
 /*& ABOUT STORE  */
 
-.thirdSection{
-width: 70%;
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-left: auto;
-margin-right: auto;
-padding-top: 120px;
-gap: 52px;
+.thirdSection {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 120px;
+  gap: 52px;
 }
 
-.thirdSection h3{
-font-size: 25px;
-font-weight: 900;
-
+.thirdSection h3 {
+  font-size: 25px;
+  font-weight: 900;
 }
 
-
-.aboutDiv{
-    display: flex;
-    align-items: center;
-    gap: 27px;
+.aboutDiv {
+  display: flex;
+  align-items: center;
+  gap: 27px;
 }
 
-.aboutSection{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+.aboutSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
-
-
-.aboutDiv p{
-    font-size: 50px;
-    font-weight: 900;
+.aboutDiv p {
+  font-size: 50px;
+  font-weight: 900;
 }
 
-
-.aboutDiv span{
-font-size: 13px;
-font-weight: 400;
+.aboutDiv span {
+  font-size: 13px;
+  font-weight: 400;
 }
-
 
 /*& DELIVERY  */
 
-.fourthSection{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 159px;
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
+.fourthSection {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 159px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
 }
 
-
-.fourthSection h4{
-    text-align: center;
-    font-size: 25px;
-    font-weight: 900;
+.fourthSection h4 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
 }
 
-
-.fourthSection span{
-font-size: 12px;
-font-weight: 400;
-
+.fourthSection span {
+  font-size: 12px;
+  font-weight: 400;
 }
-
 
 /* RESPONSIVE  */
 
+@media (max-width: 768px) {
+  /*& BOOKS FROM  */
+  .mainSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 90%;
+  }
 
+  .leftBook {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
 
-@media only screen and (max-width: 768px) {
+  .leftBook h1 {
+    font-size: 28px;
+  }
 
-.navSection{
-    display: none;
-}
+  .leftBook span {
+    font-size: 12px;
+    width: auto;
+    height: auto;
+  }
 
+  .leftBook button {
+    width: 100%;
+    padding-right: 0;
+  }
 
+  .rightBook img {
+    width: 100%;
+    height: auto;
+  }
 
+  /*& CATALOG  */
+  .aboutSection {
+    flex-direction: column;
+    padding: 10px;
+    align-items: flex-start;
+  }
 
+  /*& DELIVERY */
 
-    .mainSection{
-        flex-direction: column;
-        width: max-content;
-    }
+  .fourthSection {
+    width: 90%;
+    padding-top: 100px;
+    gap: 30px;
+  }
 
-    .rightBook img{
-        width: 360px;
-        height: 260px;
-    }
+  /*& FOOTER  */
 
-    .leftBook{
-        width: max-content;
-    }
-
-    .catalogBtn{
-       
-    }
-
-    .aboutSection{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+ 
 }
