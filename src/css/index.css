@@ -158,3 +158,41 @@ font-weight: 400;
 }
 
 
+/* RESPONSIVE  */
+
+
+
+@media only screen and (max-width: 768px) {
+
+.navSection{
+    display: none;
+}
+
+
+
+
+
+    .mainSection{
+        flex-direction: column;
+        width: max-content;
+    }
+
+    .rightBook img{
+        width: 360px;
+        height: 260px;
+    }
+
+    .leftBook{
+        width: max-content;
+    }
+
+    .catalogBtn{
+       
+    }
+
+    .aboutSection{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
