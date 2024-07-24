@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+  align-items: center;
 }
 
 .textDiv h2 {
@@ -77,34 +78,24 @@
 
 .rightDiv {
   box-shadow: 0px 4px 11px #00000040;
-  width: 801px;
+  width: 800px;
   height: 500px;
   margin-top: 220px;
+  display: flex;
+  align-items: center;
+  
+  
+  
+  
 }
 
 .bookList {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
-  gap: 10px;
+  gap: 30px;
 }
 
-.bookBtnLeft {
-  position: absolute;
-  top: 560px;
-  left: 240px;
-  width: 800px;
-  height: 40px;
-}
-
-.bookBtnRight {
-  position: absolute;
-  top: 560px;
-  left: 990px;
-  width: 800px;
-  height: 40px;
-}
 
 .bookBtn {
   cursor: pointer;
