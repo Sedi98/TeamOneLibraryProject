@@ -1,0 +1,11 @@
+.aboutBook{
+    display: flex;
+}
+/* .aboutBookLeftside {
+
+} */
+
+.backBtn {
+    background-color: rgba(225, 106, 0, 1);
+    color: white;
+}
