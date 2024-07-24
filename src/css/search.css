@@ -90,10 +90,18 @@
   gap: 10px;
 }
 
-.bookBtn {
+.bookBtnLeft {
   position: absolute;
   top: 560px;
-  left: 610px;
+  left: 240px;
+  width: 800px;
+  height: 40px;
+}
+
+.bookBtnRight {
+  position: absolute;
+  top: 560px;
+  left: 990px;
   width: 800px;
   height: 40px;
 }
