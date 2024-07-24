@@ -101,3 +101,70 @@
 .bookBtn {
   cursor: pointer;
 }
+
+/* RESPONSIVE */
+
+
+@media (max-width:768px){
+
+
+
+.mainSection {
+  width: 90%;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 300px;
+}
+
+.leftDiv, .rightDiv {
+  width: 100%;
+  padding-top: 20px;
+}
+
+
+.leftDiv h1 {
+  font-size: 28px;
+  text-align: center;
+}
+
+.leftDiv input, .leftDiv button {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.bookImg {
+  width: 100%;
+  height: auto;
+  padding-left: 0;
+}
+
+.textDiv h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.textDiv p, .textDiv span {
+  text-align: center;
+  width: 100%;
+}
+
+.rightDiv {
+  margin-top: 20px;
+  width: 100%;
+  box-shadow: none;
+}
+
+.bookList {
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.bookBtn {
+display: none;
+}
+
+/*& FOOTER  */
+
+}
