@@ -81,3 +81,39 @@
   gap: 50px;
   cursor: pointer;
 }
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  .footerLinkSection  {
+   display: none!important;
+   
+  }
+
+  .footerInner {
+    padding: 10px!important;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .mobileLinks {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footerUl{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    font-size: 12px;
+  }
+
+  .footerUl a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+  }
+}
