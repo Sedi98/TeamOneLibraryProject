@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.chooseBar {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  align-content: center;
+  margin-bottom: 100px;
+}
+.categoriesNames {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+.categoriesNames a {
+  text-decoration: none;
+}
+.categorySliderSide {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  /* gap-i azalt 30px ele */
+  gap: 100px;
+  align-items: center;
+}
+.bookCardTotal {
+  width: 184px;
+  height: 332px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.bookImage {
+  /* width: 80%; */
+  margin: 0 auto;
+  margin-top: 24px;
+  position: relative;
+}
+.ifBookNewSign {
+  position: absolute;
+  /* top: 0px;
+  right: 0px; */
+}

@@ -1,11 +1,127 @@
-.aboutBook{
-    display: flex;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+  text-align: left;
 }
-/* .aboutBookLeftside {
-
-} */
-
+.aboutBook {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 150px;
+  gap: 60px;
+}
+.aboutBookLeftside {
+  display: flex;
+  flex-direction: column;
+}
 .backBtn {
-    background-color: rgba(225, 106, 0, 1);
-    color: white;
+  background-color: rgba(225, 106, 0, 1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23.54px;
+  width: 100px;
+  height: 29px;
+  padding-left: 12px;
+  margin-left: -5px;
+}
+.yearBox {
+  font-size: 12px;
+  font-weight: 900;
+  color: white;
+  background-color: rgba(47, 128, 237, 1);
+  border-radius: 5px;
+  padding: 7px 20px;
+  width: max-content;
+  margin-top: 80px;
+}
+h1 {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 68.67px;
+}
+h2 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 31.39px;
+}
+.author {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 43.16px;
+}
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35.31px;
+}
+.newSign {
+  color: white;
+  background-color: rgba(235, 87, 87, 1);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23.54px;
+  padding: 7px 30px;
+  width: max-content;
+  border-radius: 4px;
+  position: absolute;
+  right: 18px;
+  top: 0;
+}
+.aboutBookRightside {
+  position: relative;
+}
+.commentSection {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.commentInput {
+  width: 50%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+}
+
+.sendBtn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(225, 106, 0, 1);
+  padding: 10px 9px 6px;
+  width: 60px;
+  height: 60px;
+}
+.commentAddImage{
+  padding: 7px;
+}
+.inputLine {
+  display: flex;
+}
+
+.commentBox{
+  width: 54%;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.commentHeader {
+  display: flex;
+  gap: 28px;
+}
+.anonimName{
+  font-weight: bold;
 }
