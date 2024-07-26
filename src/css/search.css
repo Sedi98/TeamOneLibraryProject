@@ -8,7 +8,6 @@
 
 /*& LEFT */
 
-
 .leftDiv {
   display: flex;
   flex-direction: column;
@@ -69,7 +68,7 @@
   font-size: 18px;
   font-weight: 400;
 }
- 
+
 .textDiv span {
   font-size: 14px;
   font-weight: 400px;
@@ -79,14 +78,10 @@
 .rightDiv {
   box-shadow: 0px 4px 11px #00000040;
   width: 800px;
-  height: 500px;
+  padding: 40px;
   margin-top: 220px;
   display: flex;
   align-items: center;
-  
-  
-  
-  
 }
 
 .bookList {
@@ -96,74 +91,76 @@
   gap: 30px;
 }
 
-
 .bookBtn {
   cursor: pointer;
 }
 
 /* RESPONSIVE */
 
+@media (max-width: 768px) {
+  .mainSection {
+    width: 90%;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-@media (max-width:768px){
+  .leftDiv,
+  .rightDiv {
+    width: 100%;
+    padding-top: 20px;
+  }
 
+  .leftDiv h1 {
+    font-size: 28px;
+    text-align: center;
+  }
 
+  .leftDiv input,
+  .leftDiv button {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.mainSection {
-  width: 90%;
-  flex-direction: column;
-  gap: 20px;
-  padding-bottom: 300px;
-}
+  .bookImg {
+    width: 100%;
 
-.leftDiv, .rightDiv {
-  width: 100%;
-  padding-top: 20px;
-}
+    padding-left: 0;
+  }
 
+  .textDiv h2 {
+    font-size: 20px;
+    text-align: center;
+  }
 
-.leftDiv h1 {
-  font-size: 28px;
-  text-align: center;
-}
+  .textDiv p,
+  .textDiv span {
+    text-align: center;
+    width: 100%;
+  }
 
-.leftDiv input, .leftDiv button {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .rightDiv {
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: none;
+  }
 
+  .bookList {
+    flex-direction: column;
+    padding-top: 20px;
+  }
 
-.bookImg {
-  width: 100%;
-  height: auto;
-  padding-left: 0;
-}
+  .bookBtn {
+    display: none;
+  }
 
-.textDiv h2 {
-  font-size: 20px;
-  text-align: center;
-}
+  .bookBtnRight {
+    display: none;
+  }
 
-.textDiv p, .textDiv span {
-  text-align: center;
-  width: 100%;
-}
+  .bookBtnLeft {
+    display: none;
+  }
 
-.rightDiv {
-  margin-top: 20px;
-  width: 100%;
-  box-shadow: none;
-}
-
-.bookList {
-  flex-direction: column;
-  padding-top: 20px;
-}
-
-.bookBtn {
-display: none;
-}
-
-/*& FOOTER  */
-
+  /*& FOOTER  */
 }

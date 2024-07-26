@@ -1,25 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/css/bookInfo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/css/footer.css">
+    <link rel="stylesheet" href="../src/css/navbar.css">
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <section class="navSection">
+      <nav class="navbar">
+        <img src="../src/assets/img/brand.svg" alt="" class="brand" />
+
+        <ul class="navUl">
+          <li><a class="" href="../index.html">Home</a></li>
+          <li><a class="active" href="./catalog.html">Catalog</a></li>
+          <li><a href="./about.html">About Store</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./search.html">Search</a></li>
+        </ul>
+
+        <div class="hamburger"></div>
+
+        <div class="joinUs">
+          <span> <img src="../src/assets/icons/user.svg" alt="" /></span> Join
+          Us
+        </div>
+      </nav>
+    </section>
     <section>
-        <div class="aboutBook">
-          <div class="aboutBookLeftside">
-            <button class="backBtn">< Back</button>
-            <button class="yearBtn">2017</button>
-            <h1>Order in Chaos</h1>
-            <h2>2 days ago added</h2>
-            <p class="author">Konstantin Koptelov</p>
-            <p class="description">s of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city. More details</p>
+      <div class="aboutBook">
+        <div class="aboutBookLeftside">
+          <button class="backBtn">< Back</button>
+          <div class="yearBox">2017</div>
+          <h1>Order in Chaos</h1>
+          <h2>2 days ago added</h2>
+          <p class="author">Konstantin Koptelov</p>
+          <p class="description">
+            s of Kiev can receive an order on the day of its registration.
+            Customers from other cities of Ukraine can receive an order within
+            1-5 days, depending on the location of the settlement and the
+            selected delivery method. Orders over UAH 1000 are delivered free of
+            charge *. You can see the available methods, exact terms and cost of
+            delivery during checkout in the order basket, after selecting the
+            delivery city. More details
+          </p>
+        </div>
+        <div class="aboutBookRightside">
+          <div class="newSign">New</div>
+          <img src="../src/assets/img/bookPicture.svg" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="commentSection">
+      <div class="bookCommentAdding">
+        <form>
+          <div class="inputLine">
+            <input
+              class="commentInput"
+              type="text"
+              placeholder="Your anonim comment..."
+            />
+            <button class="sendBtn">
+              <img
+                class="commentAddImage"
+                src="../src/assets/icons/inputsend.svg"
+                alt=""
+              />
+            </button>
           </div>
-          <div class="aboutBookRightside">
-            <img src="../src/assets/img/bookPicture.svg" alt="">
+        </form>
+      </div>
+
+      <div class="commentBox">
+        <div class="commentHeader">
+          <p class="anonimName">anonim</p>
+          <p class="commentDate">18:32 today</p>
+        </div>
+        <p class="anonimComment">
+          Woah, your project looks awesome! How long have you been coding for?
+          I’m still new, but think I want to dive into React as well soon.
+          Perhaps you can give me an insight on where I can learn React? Thanks!
+        </p>
+      </div>
+    </section>
+    <footer class="footer">
+      <section class="footerInner">
+        <div class="footerBrand">
+          <img src="../src/assets/img/footer_brand.svg" alt="" />
+        </div>
+        <div class="footerLinkSection">
+          <div class="footerLinkContainer">
+            <p class="footerTitle">Popular</p>
+            <a href="" class="footerLink">Programming</a>
+            <a href="" class="footerLink">Books for kids</a>
+            <a href="" class="footerLink">Psychology</a>
+            <a href="" class="footerLink">Business</a>
+          </div>
+          <div class="footerLinkContainer">
+            <p class="footerTitle">Cash</p>
+            <a href="" class="footerLink">Delivery</a>
+            <a href="" class="footerLink">Payment</a>
+            <a href="" class="footerLink">About the store</a>
+          </div>
+          <div class="footerLinkContainer">
+            <p class="footerTitle">Help</p>
+            <a href="" class="footerLink">Contact</a>
+            <a href="" class="footerLink">Purchase return</a>
+            <a href="" class="footerLink">Buyer Help</a>
           </div>
         </div>
       </section>
-</body>
+      <p class="footerText">
+        All rights reserved © 2003-2024 LIBRARY TERMS OF USE | Privacy Policy
+      </p>
+    </footer>
+  </body>
 </html>
