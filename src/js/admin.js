@@ -4,6 +4,13 @@ const genreSelect = document.querySelector(".genreSelect");
 const adminPanel = document.querySelector(".adminPanel");
 adminPanel.style = "display: none";
 
+
+const hamburger = document.querySelector(".hamburger");
+const leftSide = document.querySelector(".leftSide");
+const backDiv = document.querySelector(".backDiv");
+
+const closeNavBtn = document.querySelector(".closeIcon");
+
 const bookGenres = [
   "Adventure",
   "Biography",
@@ -30,6 +37,27 @@ loginBtn.addEventListener("click", () => {
   openPanel();
 });
 
+
+
+hamburger.addEventListener("click", () => {
+  toggleMenu();
+});
+
+closeNavBtn.addEventListener("click", () => {
+  toggleMenu();
+});
+
+
+backDiv.addEventListener("click", () => {
+  toggleMenu();
+});
+
+
+function toggleMenu() {
+  leftSide.classList.toggle("activeNav");
+  backDiv.classList.toggle("activeBack");
+}
+
 function openPanel() {
   loginContainer.style = "display: none";
   adminPanel.style = "display: block";
@@ -45,3 +73,7 @@ function loadGenres() {
 }
 
 loadGenres();
+
+
+
+
