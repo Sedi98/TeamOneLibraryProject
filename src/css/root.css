@@ -1,0 +1,11 @@
+:root{
+    --btn-background-color: rgba(225, 106, 0, 1);
+    --btn-text-color: white;
+    --btn-shadow-color: 0px 5px 15px rgb(225, 106, 0.35);
+    --btn-scale: scale(1.03)
+}
+
+
+body{
+    background-color: #fffaf5;
+}
