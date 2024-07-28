@@ -8,14 +8,18 @@
   display: flex;
   text-align: center;
   align-content: center;
-  margin-bottom: 100px;
+}
+.overflow-x-auto {
+  width: 50%;
+  overflow: auto;
+  margin: 0 auto;
 }
 .categoriesNames {
   width: 50%;
   margin: 0 auto;
   display: flex;
   gap: 60px;
-  align-items: center;
+  /* align-items: flex-end; */
 }
 .categoriesNames a {
   text-decoration: none;
@@ -24,25 +28,85 @@
   width: 80%;
   margin: 0 auto;
   display: flex;
-  /* gap-i azalt 30px ele */
-  gap: 100px;
+  gap: 30px;
   align-items: center;
 }
-.bookCardTotal {
-  width: 184px;
-  height: 332px;
+.card {
   background-color: white;
   display: flex;
   flex-direction: column;
+  align-content: space-between;
+  gap: 16px;
+  border-radius: 5px;
+  padding: 14px;
 }
-.bookImage {
-  /* width: 80%; */
+.card-img-top {
   margin: 0 auto;
-  margin-top: 24px;
   position: relative;
+  width: 130px;
+  height: 180px;
 }
 .ifBookNewSign {
   position: absolute;
   /* top: 0px;
   right: 0px; */
+}
+.btn-primary {
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(225, 106, 0, 1);
+  padding: 10px 28px;
+  border-radius: 5px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23.54px;
+  color: white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: center;
+}
+.card-text {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 23.54px;
+  text-align: left;
+}
+.bookSlideLine {
+  width: 100%;
+  display: flex;
+  gap: 64px;
+  margin: 60px 0px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+.sectionBookName{
+font-family: Montserrat;
+font-size: 25px;
+font-weight: 900;
+line-height: 49.05px;
+text-align: center;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
