@@ -60,7 +60,7 @@ function toggleMenu() {
 
 function openPanel() {
   loginContainer.style = "display: none";
-  adminPanel.style = "display: block";
+  adminPanel.style = "display: flex";
 }
 
 function loadGenres() {
