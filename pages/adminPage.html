@@ -1,27 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>salam</title>
-</head>
-<body>
-    <h1>hello world</h1>
-    <p>hello</p>
-    <p>hello</p>
-
-    <p>hello</p>
-    <p>hello</p>
-    <p>hello</p>
-    <p>hello</p>
-    <p>hello</p>
-    <p>hello</p>
-    <p>hello</p>
-    <p>hello</p>
-    <div>
-      
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/css/root.css" />
+    <link rel="stylesheet" href="../src/css/admin.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <!-- login Container -->
+    <div class="loginContainer">
+      <img class="loginBrand" src="../src/assets/img/footer_brand.svg" alt="" />
+      <div class="loginForm">
+        <h1 class="loginTitle">Welcome admin</h1>
+        <input
+          class="loginInput usrnameInput"
+          type="text"
+          placeholder="Username"
+        />
+        <input
+          class="loginInput passInput"
+          type="password"
+          placeholder="Password"
+        />
+        <button class="loginBtn">Login</button>
+      </div>
     </div>
-</body>
+
+    <!-- panel container -->
+
+    <div class="adminPanel">
+      <!-- left side -->
+       <div class="backDiv"></div>
+      <div class="leftSide">
+        <div class="closeIcon"><i class="bx bx-x"></i></div>
+        <img class="leftBrand" src="../src/assets/img/footer_brand.svg" alt="" />
+        <div class="adminList">
+          <img src="../src/assets/img/navIcon.svg" alt="" />
+          <p>Home</p>
+        </div>
+        <div class="adminList">
+          <img src="../src/assets/img/navIcon.svg" alt="" />
+          <p>Books</p>
+        </div>
+        <div class="adminList">
+          <img src="../src/assets/img/navIcon.svg" alt="" />
+          <p>About</p>
+        </div>
+        <div class="adminList">
+          <img src="../src/assets/img/navIcon.svg" alt="" />
+          <p>Contact</p>
+        </div>
+        <div class="adminList">
+          <img src="../src/assets/img/navIcon.svg" alt="" />
+          <p>Join Us</p>
+        </div>
+        <div class="adminList">
+          <img src="../src/assets/img/navIcon.svg" alt="" />
+          <p>Logout</p>
+        </div>
+      </div>
+
+      <!-- right side -->
+      <div class="rightSide">
+        <div class="panelNav">
+          <!-- admin info -->
+           <div class="rightNavBrand">
+            <img src="../src/assets/img/brand.svg" alt="" />
+           </div>
+          <div class="adminInfo">
+            <img src="../src/assets/icons/user.svg" alt="" />
+            <p>Admin</p>
+          </div>
+          <div class="hamburger">
+            <i class="bx bx-menu"></i>
+          </div>
+        </div>
+        <h1>Add Book</h1>
+        <h2>Search Book</h2>
+        <!-- search container -->
+        <div class="searchBox">
+          <input type="text" class="searchInput" placeholder="Search" />
+          <button class="searchBtn"><i class="bx bx-search"></i></button>
+        </div>
+        <!-- book form section -->
+        <h3 class="rightTitle">Book form</h3>
+        <div class="addBookContainer">
+          <p>Book name</p>
+          <input
+            type="text"
+            class="bookTitle addBookInput"
+            placeholder="Book Title"
+          />
+          <p>Book author</p>
+          <input
+            type="text"
+            class="bookAuthor addBookInput"
+            placeholder="Book Author"
+          />
+          <p>Image Url</p>
+          <input
+            type="text"
+            class="bookUrl addBookInput"
+            placeholder="Book Cover Url"
+          />
+          <p>Description</p>
+          <textarea
+            class="bookPages addBookInput"
+            placeholder="Description"
+          ></textarea>
+          <p>Book Type</p>
+          <select name="" id="" class="addBookInput genreSelect">
+            <!-- genres will be listed in here -->
+          </select>
+          <div class="checkDiv">
+            <label for="isNewCheck">Is new?</label>
+            <input id="isNewCheck" type="checkbox" class="checkInput" />
+          </div>
+          <button class="addBookBtn">Add</button>
+        </div>
+
+        <!-- about store section -->
+        <h3 class="rightTitle">About Store</h3>
+        <div class="aboutStoreContainer">
+          <p>Title</p>
+          <input
+            type="text"
+            class="bookTitle addStoreInput"
+            placeholder="Book Title"
+          />
+          <p>Book img url</p>
+          <input
+            type="text"
+            class="bookAuthor addStoreInput"
+            placeholder="Book Author"
+          />
+
+          <p>Description</p>
+          <textarea
+            class="bookPages addStoreInput"
+            placeholder="Description"
+          ></textarea>
+
+          <button class="addStoreBtn">Add</button>
+        </div>
+        <!-- join us section -->
+        <h3 class="rightTitle">Join Us</h3>
+        <div class="joinUsContainer">
+          <table class="joinUsTable adminTable overflowContainer">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>qG5iC@example.com</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>John Doe</td>
+                <td>qG5iC@example.com</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>John Doe</td>
+                <td>qG5iC@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="rightTitle">Book List</h3>
+        <div class="bookTableContainer overflowContainer">
+          <table class="bookTable adminTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>#</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Angels</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>Detectiv</td>
+                <td>John Doe</td>
+                <td><i class="bx bx-trash"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Demons</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>Detectiv</td>
+                <td>John Doe</td>
+                <td><i class="bx bx-trash"></i></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Antichrist</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>Phylosophy</td>
+                <td>John Doe</td>
+                <td><i class="bx bx-trash"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+
+
+        <h3 class="rightTitle">Contact Us</h3>
+        <div class="contactUsContainer overflowContainer">
+          <table class="contactTable adminTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Full name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>emila</td>
+                <td>John Doe</td>
+                
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>John Doe</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>Detectiv</td>
+                <td>John Doe</td>
+                
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>John Doe</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>Phylosophy</td>
+                <td>John Doe</td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="../src/js/admin.js"></script>
+  </body>
 </html>
