@@ -7,7 +7,11 @@
   margin: 0 auto;
   display: flex;
   text-align: center;
-  align-content: center;
+  align-items: center;
+}
+.sliderNextImg,
+.sliderPreviusImg {
+  display: block;
 }
 .overflow-x-auto {
   width: 50%;
@@ -19,7 +23,7 @@
   margin: 0 auto;
   display: flex;
   gap: 60px;
-  /* align-items: flex-end; */
+  padding: 10px;
 }
 .categoriesNames a {
   text-decoration: none;
@@ -87,26 +91,57 @@
   width: 10px;
   height: 5px;
 }
-.sectionBookName{
-font-family: Montserrat;
-font-size: 25px;
-font-weight: 900;
-line-height: 49.05px;
-text-align: center;
+.sectionBookName h1,
+h2,
+h3 {
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 49.05px;
+  text-align: center;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   cursor: pointer;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .chooseBar {
+    flex-direction: column;
+    align-items: start;
+  }
+  .categoriesNames {
+    width: 100%;
+  }
+  .overflow-x-auto {
+    width: 100%;
+  }
+  .sliderNextImg,
+  .sliderPreviusImg {
+    display: none;
+  }
+  .categorySliderSide {
+    width: 100%;
+  }
+  .bookSlideLine {
+    overflow: auto;
+    width: 70%;
+    margin: 50px auto;
+  }
 }
