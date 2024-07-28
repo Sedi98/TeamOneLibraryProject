@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-  import { getDatabase, ref, set, get, child, update, remove , push } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+  import { getDatabase, ref, set, get, update, remove , push } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,7 +24,7 @@
 
 
 
-  function writeUserData() {
+ function writeUserData() {
     
     set(ref(db, 'users/'), {
       username: "name2",
@@ -72,7 +72,7 @@
 
 // writeUserData()
 // pushUserData()
-// readUserData()
+readUserData()
 
 
 
