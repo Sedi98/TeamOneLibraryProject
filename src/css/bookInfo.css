@@ -4,11 +4,14 @@
   font-family: Montserrat;
   text-align: left;
 }
-.aboutBook {
-  display: flex;
+.aboutBookSection{
   width: 80%;
   margin: 0 auto;
-  margin-top: 150px;
+}
+.aboutBook {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
   gap: 60px;
 }
 .aboutBookLeftside {
@@ -22,11 +25,8 @@
   border-radius: 5px;
   font-size: 12px;
   font-weight: 900;
-  line-height: 23.54px;
-  width: 100px;
-  height: 29px;
-  padding-left: 12px;
-  margin-left: -5px;
+  padding: 10px 36px 10px 12px;
+  margin-bottom: 20px;
 }
 .yearBox {
   font-size: 12px;
@@ -36,7 +36,7 @@
   border-radius: 5px;
   padding: 7px 20px;
   width: max-content;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 h1 {
   font-size: 35px;
@@ -76,11 +76,10 @@ h2 {
 }
 .commentSection {
   width: 80%;
-  margin: 0 auto;
   margin-top: 50px;
+  margin: 0 auto;
 }
 .commentInput {
-  width: 50%;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -96,15 +95,16 @@ h2 {
   width: 60px;
   height: 60px;
 }
-.commentAddImage{
+.commentAddImage {
   padding: 7px;
 }
 .inputLine {
   display: flex;
 }
-
 .commentBox{
-  width: 54%;
+  width: 50%;
+}
+.commentBox {
   padding: 20px 20px;
   border: none;
   border-radius: 5px;
@@ -115,13 +115,29 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
 .commentHeader {
   display: flex;
   gap: 28px;
 }
-.anonimName{
+.anonimName {
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .aboutBook {
+    flex-direction: column-reverse;
+  }
+  .bookInformation h1, h2, p{
+    text-align: center;
+  }
+  .commentInput, .commentBox{
+    width: 100%;
+  }
+  .aboutBookImage{
+    width: 100%;
+  }
+  .commentBox p{
+    text-align: left;
+  }
 }
