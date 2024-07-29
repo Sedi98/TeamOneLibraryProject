@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../src/css/bookInfo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,9 +14,9 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../src/css/footer.css">
-    <link rel="stylesheet" href="../src/css/navbar.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../src/css/footer.css" />
+    <link rel="stylesheet" href="../src/css/navbar.css" />
+    <title>Book Info</title>
   </head>
   <body>
     <section class="navSection">
@@ -28,7 +31,7 @@
           <li><a href="./search.html">Search</a></li>
         </ul>
 
-        <div class="hamburger"><i class='bx bx-menu'></i></div>
+        <div class="hamburger"><i class="bx bx-menu"></i></div>
 
         <div class="joinUs">
           <span> <img src="../src/assets/icons/user.svg" alt="" /></span> Join
@@ -36,62 +39,91 @@
         </div>
       </nav>
     </section>
-    <section>
+    <section class="aboutBookSection">
+      <button class="backBtn">< Back</button>
       <div class="aboutBook">
         <div class="aboutBookLeftside">
-          <button class="backBtn">< Back</button>
           <div class="yearBox">2017</div>
-          <h1>Order in Chaos</h1>
-          <h2>2 days ago added</h2>
-          <p class="author">Konstantin Koptelov</p>
-          <p class="description">
-            s of Kiev can receive an order on the day of its registration.
-            Customers from other cities of Ukraine can receive an order within
-            1-5 days, depending on the location of the settlement and the
-            selected delivery method. Orders over UAH 1000 are delivered free of
-            charge *. You can see the available methods, exact terms and cost of
-            delivery during checkout in the order basket, after selecting the
-            delivery city. More details
-          </p>
+          <div class="bookInformation">
+            <h1>Order in Chaos</h1>
+            <h2>2 days ago added</h2>
+            <p class="author">Konstantin Koptelov</p>
+            <p class="description">
+              s of Kiev can receive an order on the day of its registration.
+              Customers from other cities of Ukraine can receive an order within
+              1-5 days, depending on the location of the settlement and the
+              selected delivery method. Orders over UAH 1000 are delivered free
+              of charge *. You can see the available methods, exact terms and
+              cost of delivery during checkout in the order basket, after
+              selecting the delivery city. More details
+            </p>
+          </div>
         </div>
         <div class="aboutBookRightside">
           <div class="newSign">New</div>
-          <img src="../src/assets/img/bookPicture.svg" alt="" />
+          <img class="aboutBookImage" src="../src/assets/img/bookPicture.svg" alt="" />
         </div>
       </div>
     </section>
-    <section class="commentSection">
-      <div class="bookCommentAdding">
-        <form>
-          <div class="inputLine">
-            <input
-              class="commentInput"
-              type="text"
-              placeholder="Your anonim comment..."
-            />
-            <button class="sendBtn">
-              <img
-                class="commentAddImage"
-                src="../src/assets/icons/inputsend.svg"
-                alt=""
+    <div class="commentSection">
+      <div>
+        <div class="bookCommentAdding">
+          <form>
+            <div class="inputLine">
+              <input
+                class="commentInput"
+                type="text"
+                placeholder="Your anonim comment..."
               />
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <div class="commentBox">
-        <div class="commentHeader">
-          <p class="anonimName">anonim</p>
-          <p class="commentDate">18:32 today</p>
+              <button class="sendBtn">
+                <img
+                  class="commentAddImage"
+                  src="../src/assets/icons/inputsend.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+          </form>
         </div>
-        <p class="anonimComment">
-          Woah, your project looks awesome! How long have you been coding for?
-          I’m still new, but think I want to dive into React as well soon.
-          Perhaps you can give me an insight on where I can learn React? Thanks!
-        </p>
+
+        <div class="commentBox">
+          <div class="commentHeader">
+            <p class="anonimName">anonim</p>
+            <p class="commentDate">18:32 today</p>
+          </div>
+          <p class="anonimComment">
+            Woah, your project looks awesome! How long have you been coding for?
+            I’m still new, but think I want to dive into React as well soon.
+            Perhaps you can give me an insight on where I can learn React?
+            Thanks!
+          </p>
+        </div>
+        <div class="commentBox">
+          <div class="commentHeader">
+            <p class="anonimName">anonim</p>
+            <p class="commentDate">18:32 today</p>
+          </div>
+          <p class="anonimComment">
+            Woah, your project looks awesome! How long have you been coding for?
+            I’m still new, but think I want to dive into React as well soon.
+            Perhaps you can give me an insight on where I can learn React?
+            Thanks!
+          </p>
+        </div>
+        <div class="commentBox">
+          <div class="commentHeader">
+            <p class="anonimName">anonim</p>
+            <p class="commentDate">18:32 today</p>
+          </div>
+          <p class="anonimComment">
+            Woah, your project looks awesome! How long have you been coding for?
+            I’m still new, but think I want to dive into React as well soon.
+            Perhaps you can give me an insight on where I can learn React?
+            Thanks!
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
     <footer class="footer">
       <section class="footerInner">
         <div class="footerBrand">
@@ -123,7 +155,6 @@
         All rights reserved © 2003-2024 LIBRARY TERMS OF USE | Privacy Policy
       </p>
     </footer>
-
 
     <script src="../src/js/navbar.js"></script>
     <script src="../src/js/footer.js"></script>
