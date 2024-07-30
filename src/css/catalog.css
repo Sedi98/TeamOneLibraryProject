@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 .chooseBar {
   width: 80%;
@@ -65,15 +66,14 @@
   font-family: Montserrat;
   font-size: 12px;
   font-weight: 900;
-  line-height: 23.54px;
   background-color: var(--btn-background-color);
   color: var(--btn-text-color);
-  box-shadow: var(--btn-shadow-color);
   transition: 0.5s;
   cursor: pointer;
 }
 .btn-primary:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
 }
 .card-body {
   display: flex;
