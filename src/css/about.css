@@ -24,8 +24,9 @@ text-align: left;
 }
 @media screen  and (max-width: 1200px){
     .aboutContainer{
-        width: 90%;
+        width: 90%
     }
+    
 }
     @media screen and (max-width: 994px) {
         
