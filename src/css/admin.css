@@ -11,6 +11,24 @@ body {
   box-sizing: border-box;
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 58.5px;
+  color: rgba(51, 51, 51, 1);
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 32px;
+  margin-left: auto;
+}
+
 .loginContainer {
   height: 100vh;
   background-color: rgba(114, 4, 24, 1);
@@ -27,14 +45,20 @@ body {
   padding: 10px;
 }
 
-.loginForm {
+.inputsContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 30%;
   width: 40%;
   text-align: center;
@@ -60,15 +84,14 @@ body {
   padding: 20px 30px;
   cursor: pointer;
   transition: 0.5s;
-  box-shadow: var(--btn-shadow-color);
 }
 
 .loginBtn:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
 }
 
 /*  panel css */
-
 
 .backDiv {
   background-color: black;
@@ -83,8 +106,8 @@ body {
   transition: 0.5s;
 }
 
-
 .closeIcon {
+  display: none;
   position: absolute;
   top: 5px;
   right: 10px;
@@ -95,8 +118,7 @@ body {
   color: #f2f2f2;
 }
 
-
-.activeBack{
+.activeBack {
   display: block;
 }
 
@@ -114,12 +136,10 @@ body {
   transition: 0.5s;
 }
 
-
 .leftBrand {
   width: 100%;
   margin-top: 10px;
- }
-
+}
 
 .adminList {
   display: flex;
@@ -132,7 +152,7 @@ body {
 .rightSide {
   width: 80%;
   padding: 30px;
-  display: flex;
+  display: block;
   flex-direction: column;
   gap: 20px;
   height: 100vh;
@@ -182,12 +202,44 @@ body {
   font-weight: 900;
   cursor: pointer;
   transition: 0.5s;
-  box-shadow: var(--btn-shadow-color);
 }
 
 .searchBtn:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
 }
+
+
+.searchBox{
+  position: relative;
+  margin-bottom: 120px;
+}
+
+
+.resultContainer{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border-radius: 35px;
+  background-color: rgba(241, 240, 240, 1);
+  color: rgba(188, 188, 188, 1);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 20px;
+  gap: 10px;
+  margin: 10px 0px;
+  position: absolute;
+  max-height: 120px;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.resultContainer::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+
 
 .addBookContainer,
 .aboutStoreContainer {
@@ -231,12 +283,12 @@ body {
   font-weight: 900;
   cursor: pointer;
   transition: 0.5s;
-  box-shadow: var(--btn-shadow-color);
 }
 
 .addBookBtn:hover,
 .addStoreBtn:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
 }
 
 .joinUsContainer {
@@ -247,16 +299,18 @@ body {
 .bookTableContainer,
 .contactUsContainer {
   margin-bottom: 120px;
+  width: 100%;
 }
 
 .adminTable {
   width: 100%;
   border-collapse: collapse;
+  margin: 0px;
 }
 
 .overflowContainer {
   width: 100%;
-  
+  overflow: auto;
 }
 
 th,
@@ -268,7 +322,6 @@ tr {
   border-bottom: 1px solid rgba(230, 231, 233, 1);
   text-align: center;
   cursor: pointer;
-  
 }
 
 tr:nth-child(even) {
@@ -286,6 +339,10 @@ tr:nth-child(even) {
     left: 10%;
   }
 
+  .closeIcon {
+    display: block;
+  }
+
   /* ADMIN media query */
 
   .leftSide {
@@ -295,17 +352,32 @@ tr:nth-child(even) {
     z-index: 2;
   }
 
-  .activeBack{
+  .activeBack {
     display: block;
-
   }
 
+  .panelNav {
+    padding: 10px;
+  }
 
-  .activeNav{
+  h1 {
+    padding: 0px 10px;
+  }
+  h3 {
+    padding: 0px 10px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 49px;
+  }
+
+  .activeNav {
     left: 0px;
   }
+  
   .rightSide {
     width: 100%;
+    padding: 0px;
+    display: block;
   }
 
   .rightNavBrand {
@@ -327,6 +399,15 @@ tr:nth-child(even) {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    padding: 10px;
+  }
+
+  .joinUsContainer {
+    width: 100%;
+  }
+
+  .joinUsTable {
+    width: 100%;
   }
 
   .searchInput {
