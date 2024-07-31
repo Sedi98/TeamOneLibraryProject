@@ -163,6 +163,11 @@
     gap: 10px;
   }
 
+  .thirdSection{
+    width: 90%;
+    
+  }
+
   .leftBook h1 {
     font-size: 28px;
   }
