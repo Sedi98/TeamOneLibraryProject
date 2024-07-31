@@ -2,12 +2,13 @@ html,
 body {
   margin: 0px;
   padding: 0px;
+  font-family: "Montserrat", sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  
   box-sizing: border-box;
 }
 
@@ -20,6 +21,14 @@ h3 {
 
 h3 {
   margin: 10px 0px;
+}
+
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  
+  line-height: 18px;
 }
 
 .hamburger {
@@ -43,8 +52,9 @@ h3 {
 
 .loginTitle {
   font-size: 44px;
-  font-weight: 900;
+  font-weight: 700;
   text-align: center;
+  line-height: 53.5px;
   padding: 25px;
   color: #000000;
 }
@@ -58,9 +68,7 @@ h3 {
 .loginForm {
   display: flex;
   flex-direction: column;
- 
   background-color: white;
-  
   position: absolute;
   top: 25%;
   left: 30%;
@@ -189,6 +197,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .searchInput {
@@ -197,6 +206,7 @@ h3 {
   padding: 10px 20px;
   width: 30%;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+  font-family: "Preahvihear", sans-serif;
 }
 
 .rightTitle {
@@ -243,6 +253,7 @@ h3 {
   max-height: 120px;
   overflow: auto;
   cursor: pointer;
+  font-family: "Preahvihear", sans-serif !important;
 }
 
 .resultContainer::-webkit-scrollbar {
@@ -263,7 +274,8 @@ h3 {
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
 }
 
-.addBookContainer p {
+.addBookContainer p , 
+.aboutStoreContainer p {
   font-size: 18px;
   font-weight: 400;
   color: black;
@@ -279,6 +291,10 @@ h3 {
   display: block;
   outline: none;
   resize: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .addBookBtn,
@@ -315,6 +331,7 @@ h3 {
   width: 100%;
   border-collapse: collapse;
   margin: 0px;
+  
 }
 
 .overflowContainer {
@@ -325,6 +342,7 @@ h3 {
 th,
 td {
   padding: 10px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 tr {
@@ -340,6 +358,12 @@ tr:nth-child(even) {
 .adminTable thead {
   background-color: rgba(114, 4, 24, 1);
   color: white;
+}
+
+
+.trashIcon{
+  color: red;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
