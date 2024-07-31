@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./src/css/root.css">
     <link rel="stylesheet" href="./src/css/navbar.css" />
     <link rel="stylesheet" href="./src/css/footer.css" />
     <link rel="stylesheet" href="./src/css/index.css" />
@@ -28,10 +29,23 @@
         <div class="hamburger"><i class='bx bx-menu'></i></div>
 
         <div class="joinUs">
-          <span> <img src="./src/assets/icons/user.svg" alt="" /></span> Join Us
+          <span> <img src="../src/assets/icons/user.svg" alt="" /></span> Join
+          Us
         </div>
       </nav>
     </section>
+
+
+    <!-- join us container -->
+    <div class="joinUsContainer">
+      <div class="joinUsForm">
+        <div class="joinCloseBtn"><i class='bx bx-x'></i></div>
+        <p class="joinTitle">Join Us</p>
+        <input class="joinInput" type="text" placeholder="Name">
+        <input class="joinInput" type="text" placeholder="Email">
+        <button class="joinBtn">Join</button>
+      </div>
+    </div>
     <!-- bura kimi kopyala ve oz seyfene at -->
 
     <main>
@@ -168,5 +182,7 @@
         All rights reserved © 2003-2024 LIBRARY TERMS OF USE | Privacy Policy
       </p>
     </footer>
+
+    <script src="./src/js/navbar.js"></script>
   </body>
 </html>
