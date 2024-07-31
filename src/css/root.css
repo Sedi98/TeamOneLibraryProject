@@ -1,17 +1,43 @@
-
+/* fonts */
+/* Nunito Sans */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-/* preahvihear font */
+/* Preahvihear */
 @import url('https://fonts.googleapis.com/css2?family=Preahvihear&display=swap');
-
+/* Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* root */
 :root{
+
+    /* default variables */
+    --body-background-color: #fffaf5;
+    --container-default-width: 80%;
+    --container-mobile-width: 90%;
+
+    --full-width: 100%;
+    /* button variables */
     --btn-background-color: rgba(225, 106, 0, 1);
     --btn-text-color: white;
     --btn-shadow-color: 0px 5px 15px rgb(225, 106, 0.35);
-    --btn-scale: scale(1.03)
+    --btn-scale: scale(1.03);
+
+    /* input variables */
+    --input-border: 1px solid #cecece;
+    --input-height: 74px;
+    --input-margin-bottom: 34px;
+    --input-font-size: 20px;
+    --input-padding-left: 54px;
+    --input-outline: none;
+
+    /* general variables */
+    --cursor: pointer;
+    --font-family-general: "Montserrat", sans-serif;
+    --font-family-table: 'Nunito Sans', sans-serif;
+    --font-family-admin-search: 'Preahvihear', sans-serif;
+   
 }
 
 
 body{
-    background-color: #fffaf5;
+    background-color: var(--body-background-color);
     scroll-behavior: smooth;
 }
