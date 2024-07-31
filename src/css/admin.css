@@ -2,13 +2,12 @@ html,
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-family-general);
 }
 
 * {
   margin: 0;
   padding: 0;
-  
   box-sizing: border-box;
 }
 
@@ -17,17 +16,12 @@ h3 {
   font-size: 30px;
   line-height: 58.5px;
   color: rgba(51, 51, 51, 1);
-}
-
-h3 {
   margin: 10px 0px;
 }
-
 
 p {
   font-size: 16px;
   font-weight: 400;
-  
   line-height: 18px;
 }
 
@@ -81,26 +75,23 @@ p {
 
 .loginInput {
   width: 100%;
-  border: 1px solid rgba(114, 4, 24, 1);
-  outline: none;
-  border: 1px solid rgba(206, 206, 206, 1);
-  height: 74.54px;
-  margin-bottom: 34px;
-  border: 1px solid #cecece;
-  font-size: 20px;
-  padding-left: 54px;
+  outline: var(--input-outline);
+  height: var(--input-height);
+  margin-bottom: var(--input-margin-bottom);
+  border: var(--input-border);
+  font-size: var(--input-font-size);
+  padding-left: var(--input-padding-left);
 }
 
 .loginBtn {
   background-color: var(--btn-background-color);
   color: var(--btn-text-color);
-  width: 100%;
+  width: var(--full-width);
   padding: 20px 30px;
-  cursor: pointer;
+  cursor: var(--cursor);
   transition: 0.5s;
-  border: 1px solid #cecece;
-  padding: 22px 0;
-  font-size: 19px;
+  border: var(--input-border);
+  font-size: 20px;
   font-weight: 700;
   line-height: 25px;
   text-align: center;
@@ -153,12 +144,12 @@ p {
   background-color: rgba(114, 4, 24, 1);
   padding: 20px;
   color: white;
-  height: 100%;
+  height: var(--full-width);
   transition: 0.5s;
 }
 
 .leftBrand {
-  width: 100%;
+  width: var(--full-width);
   margin-top: 10px;
 }
 
@@ -185,7 +176,7 @@ p {
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
-  width: 100%;
+  width: var(--full-width);
 }
 
 .rightNavBrand {
@@ -206,7 +197,7 @@ p {
   padding: 10px 20px;
   width: 30%;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
-  font-family: "Preahvihear", sans-serif;
+  font-family: var(--font-family-admin-search);
 }
 
 .rightTitle {
@@ -253,7 +244,7 @@ p {
   max-height: 120px;
   overflow: auto;
   cursor: pointer;
-  font-family: "Preahvihear", sans-serif !important;
+  font-family: var(--font-family-admin-search) !important;
 }
 
 .resultContainer::-webkit-scrollbar {
@@ -286,7 +277,7 @@ p {
   border: 1px solid rgba(226, 230, 238, 1);
   border-radius: 5px;
   padding: 10px 20px;
-  width: 100%;
+  width: var(--full-width);
   box-shadow: 0px 0px 10px 1px rgba(158, 168, 189, 0.31);
   display: block;
   outline: none;
@@ -294,7 +285,7 @@ p {
   font-size: 16px;
   font-weight: 500;
   line-height: 31px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-general);
 }
 
 .addBookBtn,
@@ -324,25 +315,25 @@ p {
 .bookTableContainer,
 .contactUsContainer {
   margin-bottom: 120px;
-  width: 100%;
+  width: var(--full-width);
 }
 
 .adminTable {
-  width: 100%;
+  width: var(--full-width);
   border-collapse: collapse;
   margin: 0px;
   
 }
 
 .overflowContainer {
-  width: 100%;
+  width: var(--full-width);
   overflow: auto;
 }
 
 th,
 td {
   padding: 10px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: var(--font-family-table);
 }
 
 tr {
@@ -370,6 +361,26 @@ tr:nth-child(even) {
   .loginForm {
     width: 80%;
     left: 10%;
+  }
+
+
+  .loginTitle {
+    font-size: 32px;
+    line-height: 30px;
+  }
+
+
+  .loginInput {
+    height: 40px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+  } 
+
+  .resultContainer {
+    width: 80%;
+    top: 50px;
   }
 
   .closeIcon {
@@ -408,7 +419,7 @@ tr:nth-child(even) {
   }
 
   .rightSide {
-    width: 100%;
+    width: var(--full-width);
     padding: 0px;
     display: block;
   }
@@ -436,14 +447,14 @@ tr:nth-child(even) {
   }
 
   .joinUsContainer {
-    width: 100%;
+    width: var(--full-width);
   }
 
   .joinUsTable {
-    width: 100%;
+    width: var(--full-width);
   }
 
   .searchInput {
-    width: 100%;
+    width: var(--full-width);
   }
 }

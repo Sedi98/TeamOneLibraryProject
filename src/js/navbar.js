@@ -9,7 +9,11 @@ joinUs.addEventListener("click", () => {
 
 
 joinUsContainer.addEventListener("click", (e) => {
-    joinUsContainer.style = "display: none";
+    if (e.target === joinUsContainer) {
+        console.log(e.target);
+        joinUsContainer.style = "display: none";
+        
+    }
 })
 
 
