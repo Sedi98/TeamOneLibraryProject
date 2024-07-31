@@ -70,11 +70,11 @@ function loadGenres() {
 loadGenres();
 
 // get data from api
-
+// 
 const searchInput = document.querySelector(".searchInput");
 const searchBtn = document.querySelector(".searchBtn");
 const resultContainer = document.querySelector(".resultContainer");
-
+// add book inputs
 const bookTitle = document.querySelector(".bookTitle");
 const bookAuthor = document.querySelector(".bookAuthor");
 const bookUrl = document.querySelector(".bookUrl");
@@ -186,7 +186,6 @@ searchInput.addEventListener("keyup", (event) => {
 
   if (event.key === "Enter") {
     resultContainer.innerHTML = "Please Wait...";
-   
     searchEngine(searchInput.value);
   }
 });
