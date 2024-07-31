@@ -52,6 +52,22 @@ async function readDataFromDB(dbTable) {
   }
 }
 
+async function readSingleDataFromDB(dbTable) {
+  try {
+    const snapshot = await get(ref(db, dbTable));
+    if (snapshot.exists()) {
+      
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return [];
+    }
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
 function deleteDataFromDB(dbTable) {
   remove(ref(db, dbTable));
 }
@@ -64,17 +80,14 @@ function pushDataToDB(dbTable, data) {
   push(ref(db, dbTable), data);
 }
 
-pushDataToDB("users/", { username: "name4", email: "email4" });
+// pushDataToDB("users/", { username: "name4", email: "email4" });
 
 // deleteDataFromDB("users/");
 
 async function getData() {
-  readDataFromDB("users/").then((data) => {
-    updateUserData("users/", data[0].id, {
-      username: "Sedi",
-      email: "Memmedov",
-    });
+  readSingleDataFromDB("users/").then((data) => {
+    console.log(data);
   });
 }
 
-// getData();
+getData();
