@@ -2,13 +2,40 @@ html,
 body {
   margin: 0px;
   padding: 0px;
+  font-family: "Montserrat", sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  
   box-sizing: border-box;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 58.5px;
+  color: rgba(51, 51, 51, 1);
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  
+  line-height: 18px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 32px;
+  margin-left: auto;
 }
 
 .loginContainer {
@@ -24,51 +51,68 @@ body {
 }
 
 .loginTitle {
-  padding: 10px;
+  font-size: 44px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 53.5px;
+  padding: 25px;
+  color: #000000;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .loginForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   background-color: white;
-  padding: 20px;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 30%;
   width: 40%;
   text-align: center;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+  padding: 20px 54px 34px;
+
 }
 
 .loginInput {
   width: 100%;
   border: 1px solid rgba(114, 4, 24, 1);
-  padding: 20px 30px;
   outline: none;
   border: 1px solid rgba(206, 206, 206, 1);
+  height: 74.54px;
+  margin-bottom: 34px;
+  border: 1px solid #cecece;
+  font-size: 20px;
+  padding-left: 54px;
 }
 
 .loginBtn {
   background-color: var(--btn-background-color);
   color: var(--btn-text-color);
-  border: none;
-  font-size: 14px;
-  font-weight: 900;
-  line-height: 23.54px;
   width: 100%;
   padding: 20px 30px;
   cursor: pointer;
   transition: 0.5s;
-  box-shadow: var(--btn-shadow-color);
+  border: 1px solid #cecece;
+  padding: 22px 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: center;
+  color: #ffffff;
 }
 
 .loginBtn:hover {
-  transform: var(--btn-scale);
+  border: 1px solid var(--btn-background-color);
+  box-shadow: var(--btn-shadow-color);
 }
 
 /*  panel css */
-
 
 .backDiv {
   background-color: black;
@@ -83,8 +127,8 @@ body {
   transition: 0.5s;
 }
 
-
 .closeIcon {
+  display: none;
   position: absolute;
   top: 5px;
   right: 10px;
@@ -95,8 +139,7 @@ body {
   color: #f2f2f2;
 }
 
-
-.activeBack{
+.activeBack {
   display: block;
 }
 
@@ -114,12 +157,10 @@ body {
   transition: 0.5s;
 }
 
-
 .leftBrand {
   width: 100%;
   margin-top: 10px;
- }
-
+}
 
 .adminList {
   display: flex;
@@ -132,7 +173,7 @@ body {
 .rightSide {
   width: 80%;
   padding: 30px;
-  display: flex;
+  display: block;
   flex-direction: column;
   gap: 20px;
   height: 100vh;
@@ -156,6 +197,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .searchInput {
@@ -164,6 +206,7 @@ body {
   padding: 10px 20px;
   width: 30%;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+  font-family: "Preahvihear", sans-serif;
 }
 
 .rightTitle {
@@ -182,11 +225,40 @@ body {
   font-weight: 900;
   cursor: pointer;
   transition: 0.5s;
-  box-shadow: var(--btn-shadow-color);
 }
 
 .searchBtn:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
+}
+
+.searchBox {
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.resultContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border-radius: 35px;
+  background-color: rgba(241, 240, 240, 1);
+  color: rgba(188, 188, 188, 1);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 20px;
+  gap: 10px;
+  margin: 10px 0px;
+  position: absolute;
+  max-height: 120px;
+  overflow: auto;
+  cursor: pointer;
+  font-family: "Preahvihear", sans-serif !important;
+}
+
+.resultContainer::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
 }
 
 .addBookContainer,
@@ -202,7 +274,8 @@ body {
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
 }
 
-.addBookContainer p {
+.addBookContainer p , 
+.aboutStoreContainer p {
   font-size: 18px;
   font-weight: 400;
   color: black;
@@ -218,6 +291,10 @@ body {
   display: block;
   outline: none;
   resize: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .addBookBtn,
@@ -231,12 +308,12 @@ body {
   font-weight: 900;
   cursor: pointer;
   transition: 0.5s;
-  box-shadow: var(--btn-shadow-color);
 }
 
 .addBookBtn:hover,
 .addStoreBtn:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
 }
 
 .joinUsContainer {
@@ -247,28 +324,31 @@ body {
 .bookTableContainer,
 .contactUsContainer {
   margin-bottom: 120px;
+  width: 100%;
 }
 
 .adminTable {
   width: 100%;
   border-collapse: collapse;
+  margin: 0px;
+  
 }
 
 .overflowContainer {
   width: 100%;
-  
+  overflow: auto;
 }
 
 th,
 td {
   padding: 10px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 tr {
   border-bottom: 1px solid rgba(230, 231, 233, 1);
   text-align: center;
   cursor: pointer;
-  
 }
 
 tr:nth-child(even) {
@@ -280,10 +360,20 @@ tr:nth-child(even) {
   color: white;
 }
 
+
+.trashIcon{
+  color: red;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .loginForm {
     width: 80%;
     left: 10%;
+  }
+
+  .closeIcon {
+    display: block;
   }
 
   /* ADMIN media query */
@@ -295,17 +385,32 @@ tr:nth-child(even) {
     z-index: 2;
   }
 
-  .activeBack{
+  .activeBack {
     display: block;
-
   }
 
+  .panelNav {
+    padding: 10px;
+  }
 
-  .activeNav{
+  h1 {
+    padding: 0px 10px;
+  }
+  h3 {
+    padding: 0px 10px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 49px;
+  }
+
+  .activeNav {
     left: 0px;
   }
+
   .rightSide {
     width: 100%;
+    padding: 0px;
+    display: block;
   }
 
   .rightNavBrand {
@@ -327,6 +432,15 @@ tr:nth-child(even) {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    padding: 10px;
+  }
+
+  .joinUsContainer {
+    width: 100%;
+  }
+
+  .joinUsTable {
+    width: 100%;
   }
 
   .searchInput {

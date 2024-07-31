@@ -16,17 +16,20 @@
     <div class="loginContainer">
       <img class="loginBrand" src="../src/assets/img/footer_brand.svg" alt="" />
       <div class="loginForm">
-        <h1 class="loginTitle">Welcome admin</h1>
-        <input
-          class="loginInput usrnameInput"
-          type="text"
-          placeholder="Username"
-        />
-        <input
-          class="loginInput passInput"
-          type="password"
-          placeholder="Password"
-        />
+        <p class="loginTitle">Welcome Admin</p>
+        <div class="inputsContainer">
+          <input
+             class="loginInput usrnameInput"
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            class="loginInput passInput"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+
         <button class="loginBtn">Login</button>
       </div>
     </div>
@@ -35,10 +38,14 @@
 
     <div class="adminPanel">
       <!-- left side -->
-       <div class="backDiv"></div>
+      <div class="backDiv"></div>
       <div class="leftSide">
         <div class="closeIcon"><i class="bx bx-x"></i></div>
-        <img class="leftBrand" src="../src/assets/img/footer_brand.svg" alt="" />
+        <img
+          class="leftBrand"
+          src="../src/assets/img/footer_brand.svg"
+          alt=""
+        />
         <div class="adminList">
           <img src="../src/assets/img/navIcon.svg" alt="" />
           <p>Home</p>
@@ -69,9 +76,9 @@
       <div class="rightSide">
         <div class="panelNav">
           <!-- admin info -->
-           <div class="rightNavBrand">
+          <div class="rightNavBrand">
             <img src="../src/assets/img/brand.svg" alt="" />
-           </div>
+          </div>
           <div class="adminInfo">
             <img src="../src/assets/icons/user.svg" alt="" />
             <p>Admin</p>
@@ -81,15 +88,24 @@
           </div>
         </div>
         <h1>Add Book</h1>
-        <h2>Search Book</h2>
+        <br>
+        <h3>Search Book</h3>
         <!-- search container -->
         <div class="searchBox">
           <input type="text" class="searchInput" placeholder="Search" />
           <button class="searchBtn"><i class="bx bx-search"></i></button>
+
+
+          <!--  -->
+          <div class="resultContainer">
+            <!-- <p onclick="setUpItem()"><span><i class='bx bx-time-five'></i></span> Lorem ipsum dolor sit amet.</p> -->
+            <p>No results</p>
+          </div>
         </div>
+        
         <!-- book form section -->
         <h3 class="rightTitle">Book form</h3>
-        <div class="addBookContainer">
+        <div id="addBook" class="addBookContainer">
           <p>Book name</p>
           <input
             type="text"
@@ -110,7 +126,7 @@
           />
           <p>Description</p>
           <textarea
-            class="bookPages addBookInput"
+            class="bookDesc addBookInput"
             placeholder="Description"
           ></textarea>
           <p>Book Type</p>
@@ -120,6 +136,9 @@
           <div class="checkDiv">
             <label for="isNewCheck">Is new?</label>
             <input id="isNewCheck" type="checkbox" class="checkInput" />
+            <!--  --> <br>
+            <label for="isBestCheck">Is Bestseller?</label>
+            <input id="isBestCheck" type="checkbox" class="checkInput" />
           </div>
           <button class="addBookBtn">Add</button>
         </div>
@@ -150,8 +169,8 @@
         </div>
         <!-- join us section -->
         <h3 class="rightTitle">Join Us</h3>
-        <div class="joinUsContainer">
-          <table class="joinUsTable adminTable overflowContainer">
+        <div id="joinUs" class="joinUsContainer overflowContainer">
+          <table class="joinUsTable adminTable ">
             <thead>
               <tr>
                 <th>#</th>
@@ -199,7 +218,7 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>Detectiv</td>
                 <td>John Doe</td>
-                <td><i class="bx bx-trash"></i></td>
+                <td><i class="bx bx-trash trashIcon"></i></td>
               </tr>
               <tr>
                 <td>2</td>
@@ -207,7 +226,7 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>Detectiv</td>
                 <td>John Doe</td>
-                <td><i class="bx bx-trash"></i></td>
+                <td><i class="bx bx-trash trashIcon"></i></td>
               </tr>
               <tr>
                 <td>3</td>
@@ -215,14 +234,11 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>Phylosophy</td>
                 <td>John Doe</td>
-                <td><i class="bx bx-trash"></i></td>
+                <td><i class="bx bx-trash trashIcon"></i></td>
               </tr>
             </tbody>
           </table>
         </div>
-
-
-
 
         <h3 class="rightTitle">Contact Us</h3>
         <div class="contactUsContainer overflowContainer">
@@ -234,7 +250,6 @@
                 <th>Address</th>
                 <th>Email</th>
                 <th>Phone</th>
-                
               </tr>
             </thead>
             <tbody>
@@ -244,7 +259,6 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>emila</td>
                 <td>John Doe</td>
-                
               </tr>
               <tr>
                 <td>2</td>
@@ -252,7 +266,6 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>Detectiv</td>
                 <td>John Doe</td>
-                
               </tr>
               <tr>
                 <td>3</td>
@@ -260,7 +273,6 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>Phylosophy</td>
                 <td>John Doe</td>
-                
               </tr>
             </tbody>
           </table>
@@ -268,11 +280,8 @@
       </div>
     </div>
 
-
-
-
     <script type="module" src="../src/js/firebase.js"></script>
 
-    <script type="module" src="../src/js/admin.js"></script>
+    <script src="../src/js/admin.js"></script>
   </body>
 </html>
