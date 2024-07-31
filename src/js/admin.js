@@ -124,7 +124,7 @@ function searchEngine(searchVal) {
       renderItems(data.items);
     });
 }
-
+ 
 // render searched items
 function renderItems(items) {
   resultContainer.innerHTML = items
