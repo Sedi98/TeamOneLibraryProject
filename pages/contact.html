@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../src/css/root.css">
     <link rel="stylesheet" href="../src/css/navbar.css" />
     <link rel="stylesheet" href="../src/css/footer.css" />
-    <link rel="stylesheet" href="../src/css/contact.css">
+    <link rel="stylesheet" href="../src/css/contact.css" />
     <title>Contact Us</title>
   </head>
   <body>
@@ -26,7 +26,7 @@
           <li><a href="./search.html">Search</a></li>
         </ul>
 
-        <div class="hamburger"><i class='bx bx-menu'></i></div>
+        <div class="hamburger"><i class="bx bx-menu"></i></div>
 
         <div class="joinUs">
           <span> <img src="../src/assets/icons/user.svg" alt="" /></span> Join
@@ -49,24 +49,41 @@
     </div>
     <!-- bura kimi kopyala ve oz seyfene at -->
 
-
-
-
     <!--  -->
-    
-<div class="contactContainer">
-  <h1>Contact Us</h1>
-  <div class="inputContainer">
-    <input class="textinput" type="text" placeholder="Full Name">
-    <input class="textinput" type="text" placeholder="Email">
-  </div>
-  <div class="inputContainer">
-    <input class="textinput" type="text" placeholder="Address">
-    <input class="textinput" type="text" placeholder="Phone">
-  </div>
-  <textarea class="textarea" name="" id="" placeholder="Note"></textarea>
-  <button class="buttton">Send</button>
-</div>
+
+    <div class="contactContainer">
+      <h1>Contact Us</h1>
+      <div class="inputContainer">
+        <input
+          id="nameinput"
+          class="textinput"
+          type="text"
+          placeholder="Full Name"
+        />
+        <input
+          id="emailinput"
+          class="textinput"
+          type="text"
+          placeholder="Email"
+        />
+      </div>
+      <div class="inputContainer">
+        <input
+          id="adressInput"
+          class="textinput"
+
+          type="text"
+          placeholder="Address"
+        />
+        <input id="phoneinput" class="textinput" type="text" placeholder="Phone" />
+      </div>
+      <div>
+        <textarea id="noteinput" class="textarea" placeholder="Note"></textarea>
+      </div>
+      <div>
+      <span class="textCount">0</span>/ <span class="textlimit">100</span>
+    </div>
+    <div><button class="buttton">Send</button></div>
 
     <!-- burdan yuxarida qalan sehifeni yaz -->
 
@@ -109,7 +126,6 @@
             <a href="" class="footerLink">Purchase return</a>
             <a href="" class="footerLink">Buyer Help</a>
           </div>
-         
         </div>
         <div class="mobileLinks">
           <ul class="footerUl">
@@ -128,7 +144,8 @@
     </footer>
   </body>
 
-
   <script src="../src/js/navbar.js"></script>
-    <script src="../src/js/footer.js"></script>
+  <script src="../src/js/footer.js"></script>
+
+  <script src="../src/js/contact.js"></script>
 </html>
