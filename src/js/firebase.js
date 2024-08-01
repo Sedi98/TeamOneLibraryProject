@@ -26,14 +26,16 @@ const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
 
-function writeUserData() {
-  set(ref(db, "users/"), {
-    username: "name2",
-    email: "email2",
-  });
-}
+// function writeUserData() {
+//   set(ref(db, "users/"), {
+//     username: "admin",
+//     password: "admin123",
+//   });
+// }
 
-async function readDataFromDB(dbTable) {
+// writeUserData()
+
+export async function readDataFromDB(dbTable) {
   try {
     const snapshot = await get(ref(db, dbTable));
     if (snapshot.exists()) {
@@ -52,11 +54,10 @@ async function readDataFromDB(dbTable) {
   }
 }
 
-async function readSingleDataFromDB(dbTable) {
+export async function readSingleDataFromDB(dbTable) {
   try {
     const snapshot = await get(ref(db, dbTable));
     if (snapshot.exists()) {
-      
       return snapshot.val();
     } else {
       console.log("No data available");
@@ -68,15 +69,15 @@ async function readSingleDataFromDB(dbTable) {
   }
 }
 
-function deleteDataFromDB(dbTable) {
+export function deleteDataFromDB(dbTable) {
   remove(ref(db, dbTable));
 }
 
-function updateUserData(dbTable, dataID, data) {
+export function updateUserData(dbTable, dataID, data) {
   update(ref(db, dbTable + dataID), data);
 }
 
-function pushDataToDB(dbTable, data) {
+export function pushDataToDB(dbTable, data) {
   push(ref(db, dbTable), data);
 }
 
@@ -90,4 +91,4 @@ async function getData() {
   });
 }
 
-getData();
+// getData();
