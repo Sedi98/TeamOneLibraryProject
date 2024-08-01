@@ -1,9 +1,7 @@
-const loginContainer = document.querySelector(".loginContainer");
-const loginBtn = document.querySelector(".loginBtn");
-const genreSelect = document.querySelector(".genreSelect");
-const adminPanel = document.querySelector(".adminPanel");
-adminPanel.style = "display: none";
 
+
+
+const genreSelect = document.querySelector(".genreSelect");
 const hamburger = document.querySelector(".hamburger");
 const leftSide = document.querySelector(".leftSide");
 const backDiv = document.querySelector(".backDiv");
@@ -32,9 +30,7 @@ const bookGenres = [
   "Young Adult",
 ];
 
-loginBtn.addEventListener("click", () => {
-  openPanel();
-});
+
 
 hamburger.addEventListener("click", () => {
   toggleMenu();
@@ -53,10 +49,7 @@ function toggleMenu() {
   backDiv.classList.toggle("activeBack");
 }
 
-function openPanel() {
-  loginContainer.style = "display: none";
-  adminPanel.style = "display: flex";
-}
+
 
 function loadGenres() {
   for (let i = 0; i < bookGenres.length; i++) {
