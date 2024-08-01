@@ -39,14 +39,12 @@ function searchBook(query) {
 
 function render(items) {
     rightDiv.innerHTML = items ? items.map((item) => {
-        return `<div class="rightDiv">
-                <img
-                    class="bookBtnLeft"
-                    src="../src/assets/img/bookBtnLeft.svg"
-                    alt=""
-                />
+        return `
+               
   
                 <div class="bookList">
+
+             <div class="books">
                     <img
                         class="bookImg"
                         src="${item.volumeInfo.imageLinks?.smallThumbnail || 'default_image.jpg'}"
@@ -58,9 +56,10 @@ function render(items) {
                         <p class="personName">${item.volumeInfo.authors ? item.volumeInfo.authors.join(', ') : 'Muellif bilinmir'}</p>
                         <span class="bookTitle">${item.volumeInfo.description || 'Aciqlama yoxdur'}</span>
                     </div>
+        </div>
                 </div>
   
-                <img class="bookBtnRight" src="../src/assets/img/bookBtnRight.svg" alt="" />
+   
             </div>`;
     }).join('') : '';
 }
