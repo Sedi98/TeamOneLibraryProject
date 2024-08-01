@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-general);
 }
 body,
 html {
@@ -26,7 +26,7 @@ html {
   padding: 40px 20px;
   width: 80%;
   margin: 0 auto;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-family-general);
 }
 
 .navUl {
@@ -55,7 +55,7 @@ html {
 }
 
 .active {
-  color: rgba(225, 106, 0, 1)!important;
+  color: rgba(225, 106, 0, 1) !important;
   text-decoration: underline !important;
 }
 
@@ -64,17 +64,92 @@ html {
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
-
 
 .mobileLinks {
   display: none;
 }
 
+/* join us container */
+
+.joinUsContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  cursor: var(--cursor);
+  transition: 0.5s;
+}
+
+.joinUsForm {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 35px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+  position: relative;
+}
+
+.joinInput {
+  width: 100%;
+  
+  outline: none;
+  height: 74px;
+  margin-bottom: 34px;
+  border: 1px solid #cecece;
+  font-size: 20px;
+  padding-left: 54px;
+}
+
+
+.joinBtn{
+  background-color: var(--btn-background-color);
+  color: var(--btn-text-color);
+  width: 100%;
+  padding: 20px 30px;
+  cursor: var(--cursor);
+  transition: 0.5s;
+  border: var(--input-border);
+  padding: 22px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: center;
+}
+
+
+.joinTitle{
+  font-size: 44px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 53.5px;
+  padding: 25px;
+  color: #000000;
+}
+
+
+.joinCloseBtn{
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ font-size: 48px;
+ cursor: var(--cursor);
+}
 
 @media screen and (max-width: 768px) {
-  .navUl, .joinUs {
+  .navUl,
+  .joinUs {
     display: none;
   }
 
@@ -83,17 +158,16 @@ html {
   }
   .hamburger {
     display: block;
-    cursor: pointer;
+    cursor: var(--cursor);
     font-size: 32px;
   }
 
-  .footerLinkSection  {
-   display: none!important;
-   
+  .footerLinkSection {
+    display: none !important;
   }
 
   .footerInner {
-    padding: 10px!important;
+    padding: 10px !important;
     flex-direction: column;
     width: 95%;
   }
@@ -103,7 +177,7 @@ html {
     flex-direction: row;
   }
 
-  .footerUl{
+  .footerUl {
     display: flex;
 
     list-style: none;
@@ -113,8 +187,12 @@ html {
     font-size: 12px;
   }
 
-  .footerUl a{
+  .footerUl a {
     text-decoration: none;
     color: rgba(255, 255, 255, 1);
+  }
+
+  .joinUsForm {
+    width: 90%;
   }
 }

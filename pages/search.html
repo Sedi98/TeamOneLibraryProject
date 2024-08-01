@@ -7,6 +7,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../src/css/root.css" />
     <link rel="stylesheet" href="../src/css/navbar.css" />
     <link rel="stylesheet" href="../src/css/footer.css" />
     <link rel="stylesheet" href="../src/css/search.css" />
@@ -37,6 +38,17 @@
         </div>
       </nav>
     </section>
+
+    <!-- join us container -->
+    <div class="joinUsContainer">
+      <div class="joinUsForm">
+        <div class="joinCloseBtn"><i class='bx bx-x'></i></div>
+        <p class="joinTitle">Join Us</p>
+        <input class="joinInput" type="text" placeholder="Name">
+        <input class="joinInput" type="text" placeholder="Email">
+        <button class="joinBtn">Join</button>
+      </div>
+    </div>
     <!-- bura kimi kopyala ve oz seyfene at -->
 
     <main>
@@ -55,6 +67,8 @@
           />
 
           <div class="bookList">
+
+            <div class="books">
             <img
               class="bookImg"
               src="../src/assets/img/bookPicture.svg"
@@ -62,9 +76,9 @@
             />
 
             <div class="textDiv">
-              <h2>Order in Chaos</h2>
-              <p>Konstantin Koptelov</p>
-              <span
+              <h2 class="bookName">Order in Chaos</h2>
+              <p class="personName">Konstantin Koptelov</p>
+              <span class="bookTitle"
                 >We work without holidays and weekends! Residents of Kiev can
                 receive an order on the day of its registration. Customers from
                 other cities of Ukraine can receive an order within 1-5 days,
@@ -74,7 +88,11 @@
                 cost of delivery during checkout in the order basket, after
                 selecting the delivery city</span
               >
-            </div>
+          
+          </div>
+        
+        </div>
+
           </div>
 
           <img class="bookBtnRight" src="../src/assets/img/bookBtnRight.svg" alt="" />
@@ -140,5 +158,6 @@
 
     <script src="../src/js/navbar.js"></script>
     <script src="../src/js/footer.js"></script>
+    <script src="../src/js/search.js"></script>
   </body>
 </html>
