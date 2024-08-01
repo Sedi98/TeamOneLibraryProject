@@ -1,16 +1,18 @@
-const bookSlideLine = document.querySelector(".bookSlideLine");
-const sliderNextImg = document.querySelector(".sliderNextImg");
-const sliderPreviusImg = document.querySelector(".sliderPreviusImg");
+const bookSlideLine = document.querySelectorAll(".bookSlideLine");
+const sliderNextImg = document.querySelectorAll(".sliderNextImg");
+const sliderPreviusImg = document.querySelectorAll(".sliderPreviusImg");
 const card = document.querySelectorAll(".card");
 
 console.log(bookSlideLine.scrollWidth);
 console.log(bookSlideLine.scrollLeft);
 console.log(card[0].offsetWidth);
 
-sliderNextImg.addEventListener("click", () => {
-    bookSlideLine.scrollLeft += card[0].offsetWidth + 54;
-});
+for (let i = 0; i < bookSlideLine.length; i++) {
+    sliderNextImg[i].addEventListener("click", () => {
+        bookSlideLine[i].scrollLeft += card[i].offsetWidth + 54;
+    });
 
-sliderPreviusImg.addEventListener("click", () => {
-    bookSlideLine.scrollLeft -= card[0].offsetWidth + 54;
-});
+    sliderPreviusImg[i].addEventListener("click", () => {
+        bookSlideLine[i].scrollLeft -= card[i].offsetWidth + 54;
+    });
+}
