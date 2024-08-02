@@ -93,7 +93,7 @@
   display: flex;
   gap: 54px;
   margin: 60px 0px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 10px;
