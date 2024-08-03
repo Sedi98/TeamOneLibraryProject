@@ -44,19 +44,30 @@
   flex-direction: column;
   align-content: space-between;
   gap: 16px;
-  border-radius: 5px;
   padding: 14px;
+  position: relative;
+}
+.newIcon {
+  background-color:rgba(235, 87, 87, 1) ;
+  padding: 2px 10px 0px 10px;
+  font-family: Montserrat;
+  font-size: 9px;
+  font-weight: 900;
+  text-align: center;
+  width: max-content;
+  color: white;
+  border-radius: 2px ;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+
 }
 .card-img-top {
   margin: 0 auto;
   position: relative;
-  width: 130px;
-  height: 180px;
-}
-.ifBookNewSign {
-  position: absolute;
-  /* top: 0px;
-  right: 0px; */
+  width: 134px;
+  height: 190px;
 }
 .btn-primary {
   text-align: center;
@@ -91,9 +102,10 @@
 .bookSlideLine {
   width: 100%;
   display: flex;
-  gap: 54px;
+  gap: 48px;
   margin: 60px 0px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   width: 10px;

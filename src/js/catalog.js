@@ -9,10 +9,10 @@ console.log(card[0].offsetWidth);
 
 for (let i = 0; i < bookSlideLine.length; i++) {
     sliderNextImg[i].addEventListener("click", () => {
-        bookSlideLine[i].scrollLeft += card[i].offsetWidth + 54;
+        bookSlideLine[i].scrollLeft += card[i].offsetWidth + 48;
     });
 
     sliderPreviusImg[i].addEventListener("click", () => {
-        bookSlideLine[i].scrollLeft -= card[i].offsetWidth + 54;
+        bookSlideLine[i].scrollLeft -= card[i].offsetWidth + 48;
     });
 }
