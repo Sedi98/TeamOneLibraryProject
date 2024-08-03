@@ -51,7 +51,6 @@ addBookBtn.addEventListener("click", () => {
     genreArr.push(genreSelect[i].value);
   }
 
-  console.log(bookTitle, bookAuthor, bookDesc, genreArr, bookImg);
   let newBook = {
     title: bookTitle,
     author: bookAuthor,
