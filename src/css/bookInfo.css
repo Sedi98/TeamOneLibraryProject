@@ -20,7 +20,6 @@
 }
 .backBtn {
   background-color: var(--btn-background-color);
-  box-shadow: var(--btn-shadow-color);
   transition: 0.5s;
   cursor: pointer;
   border: none;
@@ -36,6 +35,8 @@
 }
 .backBtn:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
+
 }
 .yearBox {
   font-size: 12px;
@@ -104,12 +105,12 @@ h2 {
   width: 60px;
   height: 60px;
   background-color: var(--btn-background-color);
-  box-shadow: var(--btn-shadow-color);
   transition: 0.5s;
   cursor: pointer;
 }
 .sendBtn:hover {
   transform: var(--btn-scale);
+  box-shadow: var(--btn-shadow-color);
 }
 .commentAddImage {
   padding: 7px;
