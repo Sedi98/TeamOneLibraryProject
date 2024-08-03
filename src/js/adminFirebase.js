@@ -1,6 +1,6 @@
-import { readDataFromDB , readSingleDataFromDB,deleteDataFromDB, updateUserData } from "./firebase.js";
+import { readDataFromDB , readSingleDataFromDB,deleteDataFromDB, updateUserData ,pushDataToDB } from "./firebase.js";
 
-const addBookBtn = document.getElementById("addBookBtn");
+const addBookBtn = document.querySelector(".addBookBtn");
 const addStoreBtn = document.getElementById("addStoreBtn");
 const loginBtn = document.querySelector(".loginBtn");
 const usrnameInput = document.querySelector(".usrnameInput");
@@ -10,8 +10,8 @@ const adminPanel = document.querySelector(".adminPanel");
 adminPanel.style = "display: none";
 
 loginBtn.addEventListener("click", () => {
-  // openPanel();
-  LoginCheck()
+  openPanel();
+  // LoginCheck()
 });
 
 function LoginCheck() {
@@ -33,3 +33,10 @@ function openPanel() {
   loginContainer.style = "display: none";
   adminPanel.style = "display: flex";
 }
+
+
+
+addBookBtn.addEventListener("click", () => {
+ 
+  
+});

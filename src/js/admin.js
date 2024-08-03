@@ -72,6 +72,8 @@ const bookTitle = document.querySelector(".bookTitle");
 const bookAuthor = document.querySelector(".bookAuthor");
 const bookUrl = document.querySelector(".bookUrl");
 const bookDesc = document.querySelector(".bookDesc");
+const addGenreBtn = document.querySelector(".addGenreBtn");
+const genreContainer = document.querySelector(".genreContainer");
 //  create a function when page loads show old searched items from local storage
 function getSearchHistory() {
   let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
@@ -182,3 +184,23 @@ searchInput.addEventListener("keyup", (event) => {
     searchEngine(searchInput.value);
   }
 });
+
+
+addGenreBtn.addEventListener("click", () => {
+  let select = document.createElement("select");
+  select.classList.add("genreSelect");
+  select.classList.add("addBookInput");
+  select.style.margin = "10px 0";
+
+  for (let i = 0; i < bookGenres.length; i++) {
+    let option = document.createElement("option");
+    option.value = bookGenres[i];
+    option.text = bookGenres[i];
+    select.appendChild(option);
+  }
+  genreContainer.appendChild(select);
+
+
+
+
+})
