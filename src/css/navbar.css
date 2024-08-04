@@ -1,5 +1,3 @@
-
-
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +36,10 @@ html {
 }
 
 .hamburger {
+  display: none;
+}
+
+.navClose {
   display: none;
 }
 
@@ -103,7 +105,6 @@ html {
 
 .joinInput {
   width: 100%;
-  
   outline: none;
   height: 74px;
   margin-bottom: 34px;
@@ -112,8 +113,7 @@ html {
   padding-left: 54px;
 }
 
-
-.joinBtn{
+.joinBtn {
   background-color: var(--btn-background-color);
   color: var(--btn-text-color);
   width: 100%;
@@ -128,8 +128,7 @@ html {
   text-align: center;
 }
 
-
-.joinTitle{
+.joinTitle {
   font-size: 44px;
   font-weight: 700;
   text-align: center;
@@ -138,19 +137,51 @@ html {
   color: #000000;
 }
 
-
-.joinCloseBtn{
- position: absolute;
- top: 10px;
- right: 10px;
- font-size: 48px;
- cursor: var(--cursor);
+.joinCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 48px;
+  cursor: var(--cursor);
 }
 
 @media screen and (max-width: 768px) {
-  .navUl,
   .joinUs {
     display: none;
+  }
+
+  .navUl {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -100vh;
+    bottom: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+    display: flex;
+    padding-top: 50px;
+    gap: 20px;
+    z-index: 100;
+    flex-direction: column;
+
+    cursor: var(--cursor);
+    transition: 0.5s;
+    font-size: 17px;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+
+  .navClose {
+    display: block;
+    color: #fffaf5;
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+
+  .navUl li a {
+    color: #fffaf5;
   }
 
   .navbar {
