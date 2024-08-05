@@ -4,9 +4,10 @@
  const personName = document.querySelector(".personName")
  const bookTitle = document.querySelector(".bookTitle")
  const rightDiv = document.querySelector(".rightDiv")
+ const books = document.querySelector(".books")
 
 
-
+  
 
 
 //  BTN
@@ -37,10 +38,30 @@ function searchBook(query) {
 }
 
 
+
+
+console.log(rightDiv.offsetWidth);
+
+
+bookBtnLeft.addEventListener("click", () => {
+    books.scrollLeft += rightDiv.offsetWidth + 54;
+});
+
+bookBtnRight.addEventListener("click", () => {
+    books.scrollLeft -= rightDiv.offsetWidth + 54;
+});
+
+
+
+
 function render(items) {
     rightDiv.innerHTML = items ? items.map((item) => {
         return `
-               
+                 <img
+            class="bookBtnLeft"
+            src="../src/assets/img/bookBtnLeft.svg"
+            alt=""
+          />
   
                 <div class="bookList">
 
@@ -60,6 +81,12 @@ function render(items) {
                 </div>
   
    
-            </div>`;
+            </div>
+            
+            
+            
+            
+          <img class="bookBtnRight" src="../src/assets/img/bookBtnRight.svg" alt="" />
+            `;
     }).join('') : '';
 }
