@@ -8,13 +8,33 @@ const categoryList = document.querySelector(".categoryList")
 
 for (let i = 0; i < bookSlideLine.length; i++) {
     sliderNextImg[i].addEventListener("click", () => {
-        bookSlideLine[i].scrollLeft += card[i].offsetWidth + 48;
+        // bookSlideLine[i].scrollLeft += card[i].offsetWidth + 48;
+        bookSlideLine[i].scrollLeft += 220;
     });
 
     sliderPreviusImg[i].addEventListener("click", () => {
-        bookSlideLine[i].scrollLeft -= card[i].offsetWidth + 48;
+        // bookSlideLine[i].scrollLeft -= card[i].offsetWidth + 48;
+        bookSlideLine[i].scrollLeft -= 220;
     });
+
+    function slideWidth(){
+      if(bookSlideLine[i].offsetWidth >= 1050){
+        sliderNextImg[i].style.display = 'none'
+        sliderPreviusImg[i].style.display = 'none'
+      } else {
+        sliderNextImg[i].style.display = 'block'
+        sliderPreviusImg[i].style.display = 'block'
+      }
+    }
+    slideWidth()
+    
 }
+
+  //   if(newarr.length <= 5){
+  //     document.querySelector(".admin_slider_class").classList.add("no_active")
+  // }else{
+  //     document.querySelector(".admin_slider_class").classList.remove("no_active")
+  // }
 
 let newBooksList = []
 let bestBookList = []
