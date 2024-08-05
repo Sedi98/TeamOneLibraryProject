@@ -4,10 +4,11 @@ import {
   deleteDataFromDB,
   updateUserData,
   pushDataToDB,
+  writeSingleDataToDB,
 } from "./firebase.js";
 
 const addBookBtn = document.querySelector(".addBookBtn");
-const addStoreBtn = document.getElementById("addStoreBtn");
+const addStoreBtn = document.querySelector(".addStoreBtn");
 const loginBtn = document.querySelector(".loginBtn");
 const usrnameInput = document.querySelector(".usrnameInput");
 const passInput = document.querySelector(".passInput");
@@ -32,6 +33,13 @@ const addNewGenreBtn = document.querySelector(".addNewGenreBtn");
 
 let bookGenres = [];
 
+
+// about store section variables
+const aboutBooktitle = document.querySelector(".aboutBookTitle");
+const aboutBookImg = document.querySelector(".aboutBookImg");
+const aboutBookDescription = document.querySelector(".aboutBookDescription");
+const addStoreInput = document.querySelectorAll(".addStoreInput");
+//
 
 function loadGenres() {
   genreSelect.innerHTML = "";
@@ -169,3 +177,38 @@ addNewGenreBtn.addEventListener("click", () => {
   modalContainer.style = "display: flex";
 
 });
+
+
+
+// about store section functions
+
+addStoreBtn.addEventListener("click", () => {
+  let errorCount= 0;
+  for (let i = 0; i < addStoreInput.length; i++) {
+    if (addStoreInput[i].value === "") {
+      addStoreInput[i].style = "border: 1px solid red;"
+      errorCount++;
+    
+    }
+    
+  }
+
+
+  if (errorCount > 0) {
+    alert("Please fill in all fields")
+    return
+    
+  }else{
+   
+    
+    writeSingleDataToDB("aboutStore/", {
+      title:aboutBooktitle.value,
+      description: aboutBookDescription.value,
+      img: aboutBookImg.value
+    })
+    alert("About store changed successfully")
+  }
+
+
+});
+ 
