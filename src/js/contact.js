@@ -27,3 +27,6 @@ noteinput.addEventListener('input', () => {
     textCount.textContent = noteinput.value.length
    
 })
+
+
+

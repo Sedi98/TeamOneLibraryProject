@@ -1,7 +1,7 @@
 .contactContainer {
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: var(--container-default-width);
 }
 
 .inputContainer {
@@ -12,20 +12,22 @@
 
 .textinput {
   display: block;
-  border: 1px solid #cecece;
-  height: 55px;
-  width: 100%;
-  padding: 25px;
+  border: var(--input-border);
+  height: var(--input-height);
+  width: var(--full-width);
+  padding-left: var(--input-padding-left);
+  font-size: var(--input-font-size);
+  
 }
 
 .textarea {
-  width: 100%;
+  width: var(--full-width);
   margin: 30px 0px 0px 0px;
   height: 150px;
-  border: 1px solid #cecece;
-
-  border-color: #cecece;
+  border: var(--input-border);
   padding: 25px;
+  padding-left: var(--input-padding-left);
+  font-size: var(--input-font-size);
 }
 
 .buttton {
@@ -33,10 +35,10 @@
   width: 60%;
   margin-left: auto;
   margin-right: auto;
-  padding: 15px;
-  border-color: #e16a00;
-  background-color: #e16a00;
-  color: white;
+  padding: 25px;
+  cursor: var(--cursor);
+  background-color: var(--btn-background-color);
+  color: var(--btn-text-color);
   border: none;
   margin-top: 30px;
 }
