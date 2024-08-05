@@ -144,9 +144,6 @@ addGenreBtn.addEventListener("click", () => {
     removeGenreBtn.style.display = "none";
   }
 
-
-
-
 })
 
 
