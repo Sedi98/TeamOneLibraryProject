@@ -1,34 +1,34 @@
 
 
 
-const genreSelect = document.querySelector(".genreSelect");
+
 const hamburger = document.querySelector(".hamburger");
 const leftSide = document.querySelector(".leftSide");
 const backDiv = document.querySelector(".backDiv");
 
 const closeNavBtn = document.querySelector(".closeIcon");
 
-const bookGenres = [
-  "Adventure",
-  "Biography",
-  "Classics",
-  "Comic Book",
-  "Crime",
-  "Drama",
-  "Fantasy",
-  "Historical Fiction",
-  "Horror",
-  "Mystery",
-  "Non-Fiction",
-  "Poetry",
-  "Romance",
-  "Science Fiction",
-  "Self-Help",
-  "Thriller",
-  "Travel",
-  "Western",
-  "Young Adult",
-];
+// const bookGenres = [
+//   "Adventure",
+//   "Biography",
+//   "Classics",
+//   "Comic Book",
+//   "Crime",
+//   "Drama",
+//   "Fantasy",
+//   "Historical Fiction",
+//   "Horror",
+//   "Mystery",
+//   "Non-Fiction",
+//   "Poetry",
+//   "Romance",
+//   "Science Fiction",
+//   "Self-Help",
+//   "Thriller",
+//   "Travel",
+//   "Western",
+//   "Young Adult",
+// ];
 
 
 
@@ -51,16 +51,7 @@ function toggleMenu() {
 
 
 
-function loadGenres() {
-  for (let i = 0; i < bookGenres.length; i++) {
-    let option = document.createElement("option");
-    option.value = bookGenres[i];
-    option.text = bookGenres[i];
-    genreSelect.appendChild(option);
-  }
-}
 
-loadGenres();
 
 // get data from api
 // 
@@ -72,6 +63,16 @@ const bookTitle = document.querySelector(".bookTitle");
 const bookAuthor = document.querySelector(".bookAuthor");
 const bookUrl = document.querySelector(".bookUrl");
 const bookDesc = document.querySelector(".bookDesc");
+const addGenreBtn = document.querySelector(".addGenreBtn");
+const removeGenreBtn = document.querySelector(".removeGenreBtn");
+const genreContainer = document.querySelector(".genreContainer");
+
+
+
+
+
+
+
 //  create a function when page loads show old searched items from local storage
 function getSearchHistory() {
   let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
@@ -182,3 +183,10 @@ searchInput.addEventListener("keyup", (event) => {
     searchEngine(searchInput.value);
   }
 });
+
+
+
+
+
+
+

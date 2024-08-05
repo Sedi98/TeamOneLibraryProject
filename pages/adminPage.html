@@ -130,10 +130,30 @@
             class="bookDesc addBookInput"
             placeholder="Description"
           ></textarea>
-          <p>Book Type</p>
-          <select name="" id="" class="addBookInput genreSelect">
-            <!-- genres will be listed in here -->
-          </select>
+          <p>Book Genre</p>
+          <div class="genreContainer">
+            <select name="" id="" class="addBookInput genreSelect">
+              <!-- genres will be listed in here -->
+            </select>
+          
+
+          </div>
+          <div class="genreBtns">
+            <div title="Add New Slot" class="addGenreBtn"><i class='bx bx-plus'></i></div>
+            <div title="Add New Genre" class="addNewGenreBtn"><i class='bx bx-folder-plus'></i></div>
+            <div title="Remove existing slot" class="removeGenreBtn"><i class='bx bx-minus' ></i></div>
+          </div>
+
+          <div class="modalContainer">
+            <div class="modal">
+              <p>Genre Name</p>
+              <input type="text" class="modalInput" />
+              <button class="modalBtn modalAddBtn">Add</button>
+              <button class="modalBtn modalClose">Cancel</button>
+            </div>
+          </div>
+          
+         
           <div class="checkDiv">
             <label for="isNewCheck">Is new?</label>
             <input id="isNewCheck" type="checkbox" class="checkInput" />

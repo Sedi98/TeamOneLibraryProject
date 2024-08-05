@@ -11,14 +11,14 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBEbMtlD47XL6ONgkiSZp7erW96pgPX5Ws",
-  authDomain: "avengers1-c3662.firebaseapp.com",
-  databaseURL:
-    "https://avengers1-c3662-default-rtdb.europe-west1.firebasedatabase.app/",
-  projectId: "avengers1-c3662",
-  storageBucket: "avengers1-c3662.appspot.com",
-  messagingSenderId: "180132426988",
-  appId: "1:180132426988:web:58eb3ca89a8e11d2aa61c9",
+  apiKey: "AIzaSyDfxIftaK7x9zPCzTIEntrq3R3TYYMFpIk",
+  authDomain: "thelibraryproject-67ce2.firebaseapp.com",
+  databaseURL: "https://thelibraryproject-67ce2-default-rtdb.europe-west1.firebasedatabase.app/",
+  projectId: "thelibraryproject-67ce2",
+  storageBucket: "thelibraryproject-67ce2.appspot.com",
+  messagingSenderId: "797696713206",
+  appId: "1:797696713206:web:b1c789722c61ca5d09a7d7"
+
 };
 
 // Initialize Firebase
