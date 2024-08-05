@@ -33,6 +33,11 @@ const db = getDatabase(app);
 //   });
 // }
 
+
+export function writeSingleDataToDB(dbTable, data) {
+  set(ref(db, dbTable), data);
+}
+
 // writeUserData()
 
 export async function readDataFromDB(dbTable) {
