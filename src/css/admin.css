@@ -146,6 +146,11 @@ p {
   transition: 0.5s;
 }
 
+.leftSide a{
+  text-decoration: none;
+  color: white;
+}
+
 .leftBrand {
   width: var(--full-width);
   margin-top: 10px;
@@ -167,6 +172,7 @@ p {
   gap: 20px;
   height: 100vh;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .panelNav {

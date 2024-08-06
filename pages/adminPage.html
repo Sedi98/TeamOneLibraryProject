@@ -47,30 +47,30 @@
           src="../src/assets/img/footer_brand.svg"
           alt=""
         />
-        <div class="adminList">
+        <a href="../index.html" class="adminList">
           <img src="../src/assets/img/navIcon.svg" alt="" />
           <p>Home</p>
-        </div>
-        <div class="adminList">
+        </a>
+        <a href="#bookList" class="adminList">
           <img src="../src/assets/img/navIcon.svg" alt="" />
           <p>Books</p>
-        </div>
-        <div class="adminList">
+        </a>
+        <a href="#about" class="adminList">
           <img src="../src/assets/img/navIcon.svg" alt="" />
           <p>About</p>
-        </div>
-        <div class="adminList">
+        </a>
+        <a href="#contact" class="adminList">
           <img src="../src/assets/img/navIcon.svg" alt="" />
           <p>Contact</p>
-        </div>
-        <div class="adminList">
+        </a>
+        <a href="#join" class="adminList">
           <img src="../src/assets/img/navIcon.svg" alt="" />
           <p>Join Us</p>
-        </div>
-        <div class="adminList">
+        </a>
+        <a href="../index.html" class="adminList">
           <img src="../src/assets/img/navIcon.svg" alt="" />
           <p>Logout</p>
-        </div>
+        </a>
       </div>
 
       <!-- right side -->
@@ -165,7 +165,7 @@
         </div>
 
         <!-- about store section -->
-        <h3 class="rightTitle">About Store</h3>
+        <h3 id="about" class="rightTitle">About Store</h3>
         <div class="aboutStoreContainer">
           <p>Title</p>
           <input
@@ -190,16 +190,17 @@
         </div>
         <!-- join us section -->
         <h3 class="rightTitle">Join Us</h3>
-        <div id="joinUs" class="joinUsContainer overflowContainer">
+        <div id="join" class="joinUsContainer overflowContainer">
           <table class="joinUsTable adminTable ">
             <thead>
               <tr>
                 <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>#</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="joinUsTableBody">
               <tr>
                 <td>1</td>
                 <td>John Doe</td>
@@ -219,7 +220,7 @@
           </table>
         </div>
 
-        <h3 class="rightTitle">Book List</h3>
+        <h3 id="bookList" class="rightTitle">Book List</h3>
         <div class="bookTableContainer overflowContainer">
           <table class="bookTable adminTable">
             <thead>
@@ -261,7 +262,7 @@
           </table>
         </div>
 
-        <h3 class="rightTitle">Contact Us</h3>
+        <h3 id="contact" class="rightTitle">Contact Us</h3>
         <div class="contactUsContainer overflowContainer">
           <table class="contactTable adminTable">
             <thead>
@@ -271,15 +272,18 @@
                 <th>Address</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Note</th>
+                <td>#</td>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="contactTableBody">
               <tr>
                 <td>1</td>
                 <td>John Doe</td>
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>emila</td>
                 <td>John Doe</td>
+                <td><i class="bx bx-trash trashIcon"></i></td>
               </tr>
               <tr>
                 <td>2</td>
@@ -287,6 +291,7 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>Detectiv</td>
                 <td>John Doe</td>
+                <td><i class="bx bx-trash trashIcon"></i></td>
               </tr>
               <tr>
                 <td>3</td>
@@ -294,6 +299,7 @@
                 <td>Lorem ipsum dolor sit amet.</td>
                 <td>Phylosophy</td>
                 <td>John Doe</td>
+                <td><i class="bx bx-trash trashIcon"></i></td>
               </tr>
             </tbody>
           </table>

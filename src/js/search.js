@@ -6,6 +6,8 @@
  const rightDiv = document.querySelector(".rightDiv")
  const books = document.querySelector(".books")
 
+ const swiperBooks =document.querySelector(".swiperBooks")
+
 
   
 
@@ -55,7 +57,7 @@ bookBtnRight.addEventListener("click", () => {
 
 
 function render(items) {
-    rightDiv.innerHTML = items ? items.map((item) => {
+    swiperBooks.innerHTML = items ? items.map((item) => {
         return `
  <div class="swiper-slide books">
                 <img
