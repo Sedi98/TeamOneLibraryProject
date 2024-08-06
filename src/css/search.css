@@ -128,15 +128,19 @@
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
+
+  
+
+
   .mainSection {
     width: 90%;
     flex-direction: column;
+    background-color: #fffaf6;
+
   }
 
-  .leftDiv,
-  .rightDiv {
-    width: 100%;
-    background-color: #fffaf6;
+  .swiper-slide{
+    flex-direction: column;
   }
 
   .leftDiv h1 {
@@ -154,9 +158,9 @@
 
   .bookImg {
     width: 100%;
-    margin-top: 80%;
+    
 
-    padding-left: 0;
+    
   }
 
   .textDiv h2 {
@@ -176,9 +180,16 @@
     box-shadow: none;
   }
 
+  .bookName {
+    font-size: 25px;
+    font-weight: 900;
+  }
+
   .bookList {
     flex-direction: column;
     padding-top: 20px;
+    background-color: #fffaf6;
+
   }
 
   .bookBtn {
@@ -193,7 +204,15 @@
     display: none;
   }
 
+  .swiper-button-next,
+.swiper-button-prev {
+  display: none;
+  
+}
+
   /*& FOOTER  */
+
+
 
   .socialMedia {
     margin-top: 70%;
@@ -208,4 +227,21 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* .socialMediaTitle{
+    margin-right: auto;
+    margin-left: auto;
+  } */
+
+  .socialMedia h2{
+    text-align: center;
+    font-size: 20px;
+    height: 30px;
+    width: 370px;
+  }
+
+
+
+
+  
 }
