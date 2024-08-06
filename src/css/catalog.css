@@ -123,6 +123,7 @@
   scroll-behavior: smooth;
   overflow: hidden;
   text-overflow: ellipsis; 
+  min-height: 300px;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -152,6 +153,14 @@ h3 {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+
+
+.bookCategories {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
