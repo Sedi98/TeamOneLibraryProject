@@ -46,6 +46,23 @@
 
 /*& RIGHT */
 
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .bookImg {
   width: 220px;
   height: 450px;
@@ -55,6 +72,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  
 }
 
 .textDiv h2 {
@@ -76,18 +94,15 @@
 
 .rightDiv {
   margin-top: 15%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+ width: 65%;
+
 }
 
 .books {
-  overflow: auto;
+  
   display: flex;
   align-items: center;
   
-    overflow-x: auto;
-    scroll-behavior: smooth;
 }
 
 .bookList {
@@ -104,12 +119,10 @@
   cursor: pointer;
 }
 
-.bookBtnLeft {
-  cursor: pointer;
-}
-
-.bookBtnRight {
-  cursor: pointer;
+.swiper-button-next,
+.swiper-button-prev {
+  color: #720418;
+  
 }
 
 /* RESPONSIVE */
