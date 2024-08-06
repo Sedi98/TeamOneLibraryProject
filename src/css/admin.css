@@ -442,6 +442,7 @@ tr {
   border-bottom: 1px solid rgba(230, 231, 233, 1);
   text-align: center;
   cursor: pointer;
+  height: 50px;
 }
 
 tr:nth-child(even) {
@@ -457,7 +458,21 @@ tr:nth-child(even) {
   color: red;
   cursor: pointer;
 }
-
+.minDesc{
+  white-space: nowrap; 
+ overflow: hidden;
+  text-overflow: ellipsis; 
+  width: 200px;
+  
+}
+.addBooksImg{
+  width: 30px;
+}
+.bookListTitle{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 @media screen and (max-width: 768px) {
   .loginForm {
     width: 80%;

@@ -88,7 +88,7 @@ addBookBtn.addEventListener("click", () => {
   let genreSelect = document.querySelectorAll(".genreSelect");
 
 
-  
+
 
   for (let i = 0; i < genreSelect.length; i++) {
     genreArr.push(genreSelect[i].value);
@@ -114,7 +114,7 @@ modalClose.addEventListener("click", () => {
 
 modalAddBtn.addEventListener("click", () => {
   if (modalInput.value !== "") {
-    pushDataToDB("genres/", {name:modalInput.value});
+    pushDataToDB("genres/", { name: modalInput.value });
     // modalContainer.style = "display: none";
     modalInput.value = "";
     alert("Genre added successfully");
@@ -126,7 +126,7 @@ modalAddBtn.addEventListener("click", () => {
 
 
 addGenreBtn.addEventListener("click", () => {
- 
+
   let select = document.createElement("select");
   select.classList.add("genreSelect");
   select.classList.add("addBookInput");
@@ -155,7 +155,7 @@ addGenreBtn.addEventListener("click", () => {
 })
 
 
-removeGenreBtn.addEventListener("click", () => { 
+removeGenreBtn.addEventListener("click", () => {
   genreContainer.removeChild(genreContainer.lastElementChild);
 
 
@@ -180,26 +180,26 @@ addNewGenreBtn.addEventListener("click", () => {
 // about store section functions
 
 addStoreBtn.addEventListener("click", () => {
-  let errorCount= 0;
+  let errorCount = 0;
   for (let i = 0; i < addStoreInput.length; i++) {
     if (addStoreInput[i].value === "") {
       addStoreInput[i].style = "border: 1px solid red;"
       errorCount++;
-    
+
     }
-    
+
   }
 
 
   if (errorCount > 0) {
     alert("Please fill in all fields")
     return
-    
-  }else{
-   
-    
+
+  } else {
+
+
     writeSingleDataToDB("aboutStore/", {
-      title:aboutBooktitle.value,
+      title: aboutBooktitle.value,
       description: aboutBookDescription.value,
       img: aboutBookImg.value
     })
@@ -208,4 +208,27 @@ addStoreBtn.addEventListener("click", () => {
 
 
 });
- 
+
+function bookTableAdd() {
+  let bookTableBody = document.querySelector(".bookTableBody");
+  readDataFromDB('books/').then((data) => {
+    console.log(data);
+    bookTableBody.innerHTML = data.map((item) => {
+      return `
+      <tr>
+                <td>${data.indexOf(item)+1}</td>
+                <td class="bookListTitle"><img class="addBooksImg" src="${item.img}">${item.title}</td>
+                <td > <p class="minDesc"> ${item.description}</p> </td>
+                <td>${item.genre[0]}</td>
+                <td>${item.author}</td>
+                <td><i class="bx bx-trash trashIcon"></i></td>
+              </tr>
+
+      
+      `
+    }).join("")
+
+  })
+}
+
+bookTableAdd()
