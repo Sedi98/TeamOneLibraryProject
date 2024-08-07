@@ -8,6 +8,7 @@ import {
   update,
   remove,
   push,
+  child
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 
 const firebaseConfig = {
@@ -59,9 +60,9 @@ export async function readDataFromDB(dbTable) {
   }
 }
 
-export async function readSingleDataFromDB(dbTable) {
+export async function readSingleDataFromDB(dbTable,ID="") {
   try {
-    const snapshot = await get(ref(db, dbTable));
+    const snapshot = await get(ref(db, `${dbTable}${ID}`));
     if (snapshot.exists()) {
       return snapshot.val();
     } else {
