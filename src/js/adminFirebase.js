@@ -110,6 +110,10 @@ addBookBtn.addEventListener("click", () => {
     genreArr.push(genreSelect[i].value);
   }
 
+  let date= new Date();
+  let dateStr= `${date.getFullYear()}${String(date.getMonth()+1).padStart(2,0)}${String(date.getDate()).padStart(2,0)}`
+
+
   let newBook = {
     title: bookTitle,
     author: bookAuthor,
@@ -118,6 +122,7 @@ addBookBtn.addEventListener("click", () => {
     isNew: isNewCheck,
     isBestSeller: isBestCheck,
     genre: genreArr,
+    addDate: dateStr
   };
 
   pushDataToDB("books/", newBook);

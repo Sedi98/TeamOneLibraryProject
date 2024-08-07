@@ -7,6 +7,7 @@ let card = document.querySelectorAll(".card");
 const categoryList = document.querySelector(".categoryList");
 
 let bookCategories;
+let btnRedMore = document.querySelectorAll(".readMoreBtn");
 
 console.log(card[0].offsetWidth);
 
@@ -94,7 +95,7 @@ async function getAllBooks() {
 
 async function loadBooks(param = "All", bookData) {
   let data = bookData || (await readDataFromDB("books/"));
-  
+
   if (param != "All") {
     data = data.filter((item) => item.genre.includes(param));
     console.log(data);
@@ -123,9 +124,9 @@ function renderPriorityBooks(bestBookData, newBooksData) {
             <div class="card-body">
               <h5 class="card-title">${item.title}</h5>
               <p class="card-text">${item.author}</p>
-              <a href="../pages/bookInfo.html" onclick="setBookInfo(${
+              <a href="../pages/bookInfo.html" id="${
                 item.id
-              })" class="btn btn-primary"
+              }" class="btn btn-primary readMoreBtn"
                 >Read More</a
               >
             </div>
@@ -149,9 +150,9 @@ function renderPriorityBooks(bestBookData, newBooksData) {
             <div class="card-body">
               <h5 class="card-title">${item.title}</h5>
               <p class="card-text">${item.author}</p>
-              <a href="../pages/bookInfo.html" onclick="setBookInfo(${
+              <a href="../pages/bookInfo.html" id="${
                 item.id
-              })" class="btn btn-primary"
+              }" class="btn btn-primary readMoreBtn"
                 >Read More</a
               >
             </div>
@@ -159,11 +160,24 @@ function renderPriorityBooks(bestBookData, newBooksData) {
                 `;
     })
     .join("");
+
+
+
+    btnRedMore= document.querySelectorAll(".readMoreBtn");
+    for (let i = 0; i < btnRedMore.length; i++) {
+      btnRedMore[i].addEventListener("click", () => {
+        let id = btnRedMore[i].id;
+        localStorage.setItem("bookId", id);
+        window.location.href = "../pages/bookInfo.html";
+      })
+      
+    }
 }
 
 function renderAllBooks(data) {
   if (data.length == 0) {
-    bookSlideLine[0].innerHTML = "<p style='text-align: center'>No Books Found</p>";
+    bookSlideLine[0].innerHTML =
+      "<p style='text-align: center'>No Books Found</p>";
   } else {
     bookSlideLine[0].innerHTML = data
       .map((item) => {
@@ -180,9 +194,9 @@ function renderAllBooks(data) {
             <div class="card-body">
               <h5 class="card-title">${item.title}</h5>
               <p class="card-text">${item.author}</p>
-              <a href="../pages/bookInfo.html" onclick="setBookInfo(${
+              <a href="../pages/bookInfo.html" id="${
                 item.id
-              })" class="btn btn-primary"
+              }" class="btn btn-primary readMoreBtn"
                 >Read More</a
               >
             </div>
@@ -192,7 +206,21 @@ function renderAllBooks(data) {
       .join("");
   }
 
+
+  btnRedMore= document.querySelectorAll(".readMoreBtn");
+  for (let i = 0; i < btnRedMore.length; i++) {
+    btnRedMore[i].addEventListener("click", () => {
+      let id = btnRedMore[i].id;
+      localStorage.setItem("bookId", id)
+      window.location.href = "../pages/bookInfo.html";
+    })
+    
+  }
   buttonHider();
 }
 
 // getBooks();
+
+
+
+

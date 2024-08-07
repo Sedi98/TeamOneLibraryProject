@@ -13,10 +13,14 @@
   flex-direction: row;
   margin: 0 auto;
   gap: 60px;
+  width: 100%;
+  margin-bottom: 100px;
 }
 .aboutBookLeftside {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  flex-grow: 6;
 }
 .backBtn {
   background-color: var(--btn-background-color);
@@ -37,6 +41,11 @@
   transform: var(--btn-scale);
   box-shadow: var(--btn-shadow-color);
 
+}
+
+
+.aboutBookImage {
+  width: 100%;
 }
 .yearBox {
   font-size: 12px;
@@ -78,11 +87,13 @@ h2 {
   width: max-content;
   border-radius: 4px;
   position: absolute;
-  right: 18px;
+  right: 0;
   top: 0;
 }
 .aboutBookRightside {
   position: relative;
+  width: 90%;
+  flex-grow: 4;
 }
 .commentSection {
   width: 80%;
