@@ -76,6 +76,19 @@ h2 {
   font-size: 18px;
   font-weight: 400;
   line-height: 35.31px;
+  height: 400px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+
+.readMoreDescription {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35.31px;
+  height: auto;
+ 
 }
 .newSign {
   color: white;
@@ -152,6 +165,11 @@ h2 {
 }
 .anonimName {
   font-weight: bold;
+}
+
+
+.commentContainer{
+  min-height: 200px;
 }
 @media screen and (max-width: 768px) {
   .aboutBook {
