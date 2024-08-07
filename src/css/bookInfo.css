@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  flex-grow: 2;
+  flex-grow: 6;
 }
 .backBtn {
   background-color: var(--btn-background-color);
@@ -46,7 +46,6 @@
 
 .aboutBookImage {
   width: 100%;
-  object-fit: contain;
 }
 .yearBox {
   font-size: 12px;
@@ -88,13 +87,13 @@ h2 {
   width: max-content;
   border-radius: 4px;
   position: absolute;
-  right: 0px;
+  right: 0;
   top: 0;
 }
 .aboutBookRightside {
   position: relative;
-  width: 100%;
-  flex-grow: 1;
+  width: 90%;
+  flex-grow: 4;
 }
 .commentSection {
   width: 80%;
