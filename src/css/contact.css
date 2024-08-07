@@ -53,4 +53,9 @@
   .buttton {
     width: 100%;
   }
+
+
+  .contactContainer h1{
+    text-align: center;
+  }
 }
