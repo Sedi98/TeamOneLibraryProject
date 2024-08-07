@@ -1,80 +1,67 @@
- const searchInput = document.querySelector(".searchInput")
- const searchBtn = document.querySelector(".searchBtn")
- const bookName = document.querySelector(".bookName")
- const personName = document.querySelector(".personName")
- const bookTitle = document.querySelector(".bookTitle")
- const rightDiv = document.querySelector(".rightDiv")
- const books = document.querySelector(".books")
+import { readDataFromDB } from "./firebase.js";
 
- const swiperBooks =document.querySelector(".swiperBooks")
+const searchInput = document.querySelector(".searchInput");
+const searchBtn = document.querySelector(".searchBtn");
+const bookName = document.querySelector(".bookName");
+const personName = document.querySelector(".personName");
+const bookTitle = document.querySelector(".bookTitle");
+const rightDiv = document.querySelector(".rightDiv");
+const books = document.querySelector(".books");
 
-
-  
-
-
-//  BTN
- const bookBtnLeft = document.querySelector(".bookBtnLeft")
- const bookBtnRight = document.querySelector(".bookBtnRight")
- 
-
-
-
+const swiperBooks = document.querySelector(".swiperBooks");
 
 searchBtn.addEventListener("click", () => {
-    let searchBookItems = searchInput.value; 
-    searchBook(searchBookItems); 
+  const searchBookItems = searchInput.value;
+  searchBook(searchBookItems);
 });
 
+async function searchBook(inputValue) {
+  let data = await readDataFromDB("books/");
 
-function searchBook(query) {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`, {
-        method: 'GET'
-    })
-    .then((response) => response.json()) 
-    .then((data) => {
-        render(data.items);
-    })
-    .catch((error) => {
-        console.error('Error', error);
-    });
+  let matchCount = 0;
+
+
+  let filtered = data.filter((item) => {
+
+    return item.title.toLowerCase().includes(inputValue.toLowerCase());
+  });
+
+  console.log(filtered);
+  
+  
+  render(filtered);
 }
 
-
-
-
-console.log(rightDiv.offsetWidth);
-
-
-bookBtnLeft.addEventListener("click", () => {
-    books.scrollLeft += rightDiv.offsetWidth + 54;
-});
-
-bookBtnRight.addEventListener("click", () => {
-    books.scrollLeft -= rightDiv.offsetWidth + 54;
-});
-
-
-
-
 function render(items) {
-    swiperBooks.innerHTML = items ? items.map((item) => {
-        return `
- <div class="swiper-slide books">
+  swiperBooks.innerHTML = items
+    ? items
+        .map((item) => {
+          return `
+        <div class="swiper-slide books">
                 <img
                 class="bookImg"
-                src="${item.volumeInfo.imageLinks?.smallThumbnail || 'default_image.jpg'}"
+                src="${
+                  item.img ||
+                  "default_image.jpg"
+                }"
                 alt=""
               />
   
               <div class="textDiv">
-                <h2 class="bookName">${item.volumeInfo.title}</h2>
-                <p class="personName">${item.volumeInfo.authors ? item.volumeInfo.authors.join(', ') : 'Muellif bilinmir'}</p>
+                <h2 class="bookName">${item.title}</h2>
+                <p class="personName">${
+                  item.author
+                    ? item.author
+                    : "Muellif bilinmir"
+                }</p>
                 <span class="bookTitle"
-                  >${item.volumeInfo.description || 'Aciqlama yoxdur'}</span
+                  >${item.description || "Aciqlama yoxdur"}</span
                 >
             
             </div>
           
-             </div> `;
-    }).join('') : '';
+        </div> `;
+        })
+        .join("")
+    : "";
 }
