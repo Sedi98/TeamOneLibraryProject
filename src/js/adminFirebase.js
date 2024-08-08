@@ -6,6 +6,7 @@ import {
   pushDataToDB,
   writeSingleDataToDB,
 } from "./firebase.js";
+import {customAlert, alertDefault} from "./customAlert.js";
 
 const addBookBtn = document.querySelector(".addBookBtn");
 const addStoreBtn = document.querySelector(".addStoreBtn");
@@ -67,7 +68,7 @@ function LoginCheck() {
     if (username == data.username && password == data.password) {
       openPanel();
     } else {
-      alert("Wrong username or password");
+      customAlert("Wrong username or password",'err');
     }
   });
 }
@@ -100,7 +101,7 @@ addBookBtn.addEventListener("click", () => {
   }
 
   if (isEmpty) {
-    alert("Please fill in all fields");
+    customAlert("Please fill in all fields", "err");
     return;
   }
 
@@ -129,7 +130,7 @@ addBookBtn.addEventListener("click", () => {
   };
 
   pushDataToDB("books/", newBook);
-  alert("Book added successfully");
+  customAlert("Book added successfully", "succ");
 });
 
 // new genre modal cancel button
@@ -143,7 +144,7 @@ modalAddBtn.addEventListener("click", () => {
     pushDataToDB("genres/", { name: modalInput.value });
     // modalContainer.style = "display: none";
     modalInput.value = "";
-    alert("Genre added successfully");
+    customAlert("Genre added successfully");
     loadGenres();
   }
 });
@@ -201,7 +202,7 @@ addStoreBtn.addEventListener("click", () => {
   }
 
   if (errorCount > 0) {
-    alert("Please fill in all fields");
+    customAlert("Please fill in all fields", "err");
     return;
   } else {
     writeSingleDataToDB("aboutStore/", {
@@ -209,7 +210,7 @@ addStoreBtn.addEventListener("click", () => {
       description: aboutBookDescription.value,
       img: aboutBookImg.value,
     });
-    alert("About store changed successfully");
+    customAlert("About store changed successfully");
   }
 });
 
@@ -242,7 +243,7 @@ function bookTableAdd() {
     for (let i = 0; i < btnBookDelete.length; i++) {
       btnBookDelete[i].addEventListener("click", () => {
         deleteDataFromDB(`books/${data[i].id}`);
-        alert("Book deleted successfully");
+        customAlert("Book deleted successfully");
         bookTableAdd();
       });
     }
@@ -276,6 +277,7 @@ function renderJoinUsData() {
         if (confirmation) {
           deleteDataFromDB(`join/${data[i].id}`);
           renderJoinUsData();
+          customAlert("User deleted successfully");
         }
       });
     }
@@ -309,7 +311,7 @@ function renderContactUsData() {
     for (let i = 0; i < btnContactDelete.length; i++) {
       btnContactDelete[i].addEventListener("click", () => {
         deleteDataFromDB(`contact/${data[i].id}`);
-        alert("Joined user deleted successfully");
+        customAlert("Contact user deleted successfully");
         renderContactUsData();
       });
     }
