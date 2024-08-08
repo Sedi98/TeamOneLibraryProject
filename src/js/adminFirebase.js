@@ -16,6 +16,8 @@ const loginContainer = document.querySelector(".loginContainer");
 const adminPanel = document.querySelector(".adminPanel");
 adminPanel.style = "display: none";
 
+let btnBookDelete, btnJoinDelete, btnContactDelete;
+
 const modalClose = document.querySelector(".modalClose");
 const modalAddBtn = document.querySelector(".modalAddBtn");
 
@@ -88,7 +90,6 @@ addBookBtn.addEventListener("click", () => {
 
   for (let j = 0; j < addBookInput.length; j++) {
     addBookInput[j].style = "border: 1px solid #ccc";
-    
   }
 
   for (let i = 0; i < addBookInput.length; i++) {
@@ -110,9 +111,11 @@ addBookBtn.addEventListener("click", () => {
     genreArr.push(genreSelect[i].value);
   }
 
-  let date= new Date();
-  let dateStr= `${date.getFullYear()}${String(date.getMonth()+1).padStart(2,0)}${String(date.getDate()).padStart(2,0)}`
-
+  let date = new Date();
+  let dateStr = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(
+    2,
+    0
+  )}${String(date.getDate()).padStart(2, 0)}`;
 
   let newBook = {
     title: bookTitle,
@@ -122,19 +125,17 @@ addBookBtn.addEventListener("click", () => {
     isNew: isNewCheck,
     isBestSeller: isBestCheck,
     genre: genreArr,
-    addDate: dateStr
+    addDate: dateStr,
   };
 
   pushDataToDB("books/", newBook);
   alert("Book added successfully");
 });
 
-
 // new genre modal cancel button
 modalClose.addEventListener("click", () => {
   modalContainer.style = "display: none";
 });
-
 
 // new genre modal add button
 modalAddBtn.addEventListener("click", () => {
@@ -146,7 +147,6 @@ modalAddBtn.addEventListener("click", () => {
     loadGenres();
   }
 });
-
 
 // add a new genre selection in admin page
 addGenreBtn.addEventListener("click", () => {
@@ -162,7 +162,6 @@ addGenreBtn.addEventListener("click", () => {
     select.appendChild(option);
   }
   genreContainer.appendChild(select);
-
 
   // if multiple genre select generated then show remove genre button
   let genreSelect = document.querySelectorAll(".genreSelect");
@@ -185,7 +184,6 @@ removeGenreBtn.addEventListener("click", () => {
     removeGenreBtn.style.display = "none";
   }
 });
-
 
 // show new genre modal when click
 addNewGenreBtn.addEventListener("click", () => {
@@ -215,9 +213,6 @@ addStoreBtn.addEventListener("click", () => {
   }
 });
 
-
-
-
 // show books list on book list table
 function bookTableAdd() {
   let bookTableBody = document.querySelector(".bookTableBody");
@@ -234,24 +229,30 @@ function bookTableAdd() {
                 <td > <p class="minDesc"> ${item.description}</p> </td>
                 <td>${item.genre[0]}</td>
                 <td>${item.author}</td>
-                <td><i class="bx bx-trash trashIcon"></i></td>
+                <td><i class="bx bx-trash trashIcon btnBookDelete"></i></td>
               </tr>
 
       
       `;
       })
       .join("");
+
+    btnBookDelete = document.querySelectorAll(".btnBookDelete");
+
+    for (let i = 0; i < btnBookDelete.length; i++) {
+      btnBookDelete[i].addEventListener("click", () => {
+        deleteDataFromDB(`books/${data[i].id}`);
+        alert("Book deleted successfully");
+        bookTableAdd();
+      });
+    }
   });
 }
 
-
 function renderJoinUsData() {
-
   let joinUsTableBody = document.querySelector(".joinUsTableBody");
- 
+
   readDataFromDB("join/").then((data) => {
-    
-    
     joinUsTableBody.innerHTML = data
       .map((item) => {
         return `
@@ -259,23 +260,34 @@ function renderJoinUsData() {
           <td>${data.indexOf(item) + 1}</td>
           <td>${item.name}</td>
           <td>${item.email}</td>
-          <td><i class="bx bx-trash trashIcon"></i></td>
+          <td><i class="bx bx-trash trashIcon btnJoinDelete"></i></td>
       </tr>
       `;
       })
       .join("");
+
+    btnJoinDelete = document.querySelectorAll(".btnJoinDelete");
+
+    for (let i = 0; i < btnJoinDelete.length; i++) {
+      btnJoinDelete[i].addEventListener("click", () => {
+        let confirmation = confirm(
+          "Are you sure you want to delete this user?"
+        );
+        if (confirmation) {
+          deleteDataFromDB(`join/${data[i].id}`);
+          renderJoinUsData();
+        }
+      });
+    }
   });
 }
 
-
 function renderContactUsData() {
-
   let contactTableBody = document.querySelector(".contactTableBody");
- 
+
   readDataFromDB("contact/").then((data) => {
-  console.log(data);
-  
-    
+    console.log(data);
+
     contactTableBody.innerHTML = data
       .map((item) => {
         return `
@@ -286,11 +298,21 @@ function renderContactUsData() {
           <td>${item.email}</td>
           <td>${item.phone}</td>
           <td> <p class="minDesc">${item.note} </p> </td>
-          <td><i class="bx bx-trash trashIcon"></i></td>
+          <td><i class="bx bx-trash trashIcon btnContactDelete"></i></td>
       </tr>
       `;
       })
       .join("");
+
+    btnContactDelete = document.querySelectorAll(".btnContactDelete");
+
+    for (let i = 0; i < btnContactDelete.length; i++) {
+      btnContactDelete[i].addEventListener("click", () => {
+        deleteDataFromDB(`contact/${data[i].id}`);
+        alert("Joined user deleted successfully");
+        renderContactUsData();
+      });
+    }
   });
 }
 
