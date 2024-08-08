@@ -1,4 +1,7 @@
 import { pushDataToDB } from "./firebase.js";
+import { customAlert, alertDefault} from "./customAlert.js";
+
+
 
 
 const nameInput = document.querySelector('#nameinput')
@@ -54,7 +57,7 @@ buttton.addEventListener('click', () => {
 
 
     if (errCount > 0) {
-        alert("Please fill in all fields")
+        customAlert("Please fill in all fields", "err")
         return
 
     }
@@ -67,7 +70,7 @@ buttton.addEventListener('click', () => {
         phone: (phoneinput.value).trim(),
         note: (noteinput.value).trim(),
     })
-    alert("Thank you for your message. We will get back to you as soon as possible.")
+    customAlert("Thank you for your message. We will get back to you as soon as possible.", "succ")
 
 
 

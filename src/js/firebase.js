@@ -8,7 +8,6 @@ import {
   update,
   remove,
   push,
-  child
 } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 
 const firebaseConfig = {

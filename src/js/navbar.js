@@ -1,4 +1,5 @@
 import { pushDataToDB } from "./firebase.js";
+import {customAlert, alertDefault} from "./customAlert.js";
 
 const joinUs = document.querySelector(".joinUs");
 const joinUsContainer = document.querySelector(".joinUsContainer");
@@ -37,10 +38,10 @@ joinBtn.addEventListener("click", () => {
   console.log(joinInput[0].value, joinInput[1].value);
 
   if (joinInput[0].value === "" || joinInput[1].value === "") {
-    alert("Please fill in all fields");
+    customAlert("Please fill in all fields", "err");
     return;
   } else if (joinInput[1].value.split("").includes("@") === false) {
-    alert("Please enter a valid email");
+    customAlert("Please enter a valid email", "err");
     return;
   } else {
     pushDataToDB("join/", {
@@ -48,7 +49,7 @@ joinBtn.addEventListener("click", () => {
       email: (joinInput[1].value).trim(),
     });
 
-    alert("Thank you for joining us. We will get back to you as soon as possible.");
+    customAlert("Thank you for joining us. We will get back to you as soon as possible.",'succ');
     joinUsContainer.style = "display: none";
   }
 });

@@ -4,6 +4,8 @@ import {
   readSingleDataFromDB,
 } from "./firebase.js";
 
+import {customAlert, alertDefault} from "./customAlert.js";
+
 let readMore;
 const sendBtn = document.querySelector(".sendBtn");
 
@@ -14,7 +16,7 @@ let SpecId = localStorage.getItem("bookId");
 
 SpecId = SpecId.replace(/"/g, "");
 bookInfo();
-console.log(SpecId);
+
 
 async function bookInfo() {
   let data = await readSingleDataFromDB(`books/${SpecId}`);
@@ -97,7 +99,7 @@ function addComment(inputVal, bookID) {
     
     getComments(bookID);
   } else {
-    alert("Please write a comment");
+    customAlert("Please write a comment", "err");
   }
 }
 
@@ -106,4 +108,5 @@ sendBtn.addEventListener("click", (e) => {
   let commentInput = document.querySelector(".commentInput");
   addComment(commentInput.value, SpecId);
   commentInput.value = "";
+  customAlert("Thank you for your comment", "succ");
 });

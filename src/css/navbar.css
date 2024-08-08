@@ -9,6 +9,38 @@ html {
   background-color: #fffaf5;
 }
 
+.customAlertBox {
+  position: absolute;
+  display: block;
+  top: -100px;
+  z-index: 1000;
+ left: 30%;
+ right: 30%;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.5s;
+  background: #155724;
+  color: #ffffff;
+  border-color: #c3e6cb;
+}
+
+.alertActive {
+  top: 100px;
+  width: 40%;
+  position: absolute;
+  cursor: var(--cursor);
+  transition: 0.5s;
+  font-size: 17px;
+  font-weight: 700;
+  padding-right: 10px;
+}
+
+.alertErr {
+  background: #721c24;
+  color: #ffffff;
+  margin: 0px auto;
+}
 .navSection {
   width: 100%;
   position: sticky;
