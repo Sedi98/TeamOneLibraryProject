@@ -223,17 +223,15 @@ function bookTableAdd() {
       .map((item) => {
         return `
       <tr>
-                <td>${data.indexOf(item) + 1}</td>
-                <td class="bookListTitle"><img class="addBooksImg" src="${
-                  item.img
-                }">${item.title}</td>
-                <td > <p class="minDesc"> ${item.description}</p> </td>
-                <td>${item.genre[0]}</td>
-                <td>${item.author}</td>
-                <td><i class="bx bx-trash trashIcon btnBookDelete"></i></td>
-              </tr>
-
-      
+        <td>${data.indexOf(item) + 1}</td>
+        <td class="bookListTitle"><img class="addBooksImg" src="${
+          item.img
+        }">${item.title}</td>
+        <td > <p class="minDesc"> ${item.description}</p> </td>
+        <td>${item.genre[0]}</td>
+        <td>${item.author}</td>
+        <td><i class="bx bx-trash trashIcon btnBookDelete"></i></td>
+      </tr>
       `;
       })
       .join("");
