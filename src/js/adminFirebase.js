@@ -6,7 +6,7 @@ import {
   pushDataToDB,
   writeSingleDataToDB,
 } from "./firebase.js";
-import {customAlert, alertDefault} from "./customAlert.js";
+import { customAlert, alertDefault } from "./customAlert.js";
 
 const addBookBtn = document.querySelector(".addBookBtn");
 const addStoreBtn = document.querySelector(".addStoreBtn");
@@ -15,6 +15,15 @@ const usrnameInput = document.querySelector(".usrnameInput");
 const passInput = document.querySelector(".passInput");
 const loginContainer = document.querySelector(".loginContainer");
 const adminPanel = document.querySelector(".adminPanel");
+
+const updateEditBtn = document.querySelector(".updateEditBtn");
+const cancelEditBtn = document.querySelector(".cancelEditBtn");
+const editInput = document.querySelectorAll(".editInput");
+const editContainer = document.querySelector(".editContainer");
+let btnBookEdit;
+
+let editFromTable;
+
 adminPanel.style = "display: none";
 
 let btnBookDelete, btnJoinDelete, btnContactDelete;
@@ -68,7 +77,7 @@ function LoginCheck() {
     if (username == data.username && password == data.password) {
       openPanel();
     } else {
-      customAlert("Wrong username or password",'err');
+      customAlert("Wrong username or password", "err");
     }
   });
 }
@@ -225,13 +234,15 @@ function bookTableAdd() {
         return `
       <tr>
         <td>${data.indexOf(item) + 1}</td>
-        <td class="bookListTitle"><img class="addBooksImg" src="${
-          item.img
-        }">${item.title}</td>
+        <td class="bookListTitle"><img class="addBooksImg" src="${item.img}">${
+          item.title
+        }</td>
         <td > <p class="minDesc"> ${item.description}</p> </td>
-        <td>${item.genre[0]}</td>
+        <td>${item.genre.map((genre) => `<span>${genre}</span>`)}</td>
         <td>${item.author}</td>
-        <td><i class="bx bxs-edit-alt trashIcon btnBookEdit"></i></td>
+        <td><i data-id="${
+          item.id
+        }" class="bx bxs-edit-alt trashIcon btnBookEdit"></i></td>
         <td><i class="bx bx-trash trashIcon btnBookDelete"></i></td>
       </tr>
       `;
@@ -240,13 +251,29 @@ function bookTableAdd() {
 
     btnBookDelete = document.querySelectorAll(".btnBookDelete");
 
+    btnBookEdit = document.querySelectorAll(".btnBookEdit");
+
     for (let i = 0; i < btnBookDelete.length; i++) {
       btnBookDelete[i].addEventListener("click", () => {
-        deleteDataFromDB(`books/${data[i].id}`);
-        customAlert("Book deleted successfully");
-        bookTableAdd();
+        let confirmation = confirm(
+          "Are you sure you want to delete this book?"
+        );
+
+        if (confirmation) {
+          deleteDataFromDB(`books/${data[i].id}`);
+          deleteDataFromDB(`comments/${data[i].id}`);
+          customAlert("Book deleted successfully");
+          bookTableAdd();
+        }
       });
     }
+
+    btnBookEdit.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        editContainer.style = "display: flex";
+        editFiller(btn.getAttribute("data-id"));
+      });
+    });
   });
 }
 
@@ -318,6 +345,81 @@ function renderContactUsData() {
   });
 }
 
+async function editFiller(bookID) {
+  updateEditBtn.setAttribute("data-id", bookID);
+  let data = await readSingleDataFromDB(`books/${bookID}`);
+  let { title, description, genre, author, img } = data;
+  let editTitle = document.querySelector(".editTitle");
+  let editDescription = document.querySelector(".editDescription");
+  let editAuthor = document.querySelector(".editAuthor");
+  let editGenreContainer = document.querySelector(".editGenreContainer");
+  editGenreContainer.innerHTML = "";
+
+  let genreList = await readDataFromDB("genres/");
+
+  editTitle.value = title;
+  editDescription.value = description;
+  editAuthor.value = author;
+  for (let i = 0; i < genre.length; i++) {
+    let select = document.createElement("select");
+    select.classList.add("editGenreSelect");
+    select.classList.add("editInput");
+
+    for (let j = 0; j < genreList.length; j++) {
+      let option = document.createElement("option");
+      option.value = genreList[j].name;
+      option.innerHTML = genreList[j].name;
+      if (genre[i] == genreList[j].name) {
+        option.selected = true;
+      }
+      select.appendChild(option);
+    }
+
+    editGenreContainer.appendChild(select);
+  }
+}
+
+// on strt
 bookTableAdd();
 renderJoinUsData();
 renderContactUsData();
+
+cancelEditBtn.addEventListener("click", () => {
+  editContainer.style = "display: none";
+});
+
+updateEditBtn.addEventListener("click", () => {
+  let bookID = updateEditBtn.getAttribute("data-id");
+  let title = editInput[0].value;
+  let description = editInput[1].value;
+  let author = editInput[2].value;
+
+  console.log(bookID);
+
+  if (title == "" && description == "" && author == "") {
+    customAlert("Please fill in all fields", "err");
+    return;
+  } else {
+    const editGenreSelect = document.querySelectorAll(".editGenreSelect");
+    console.log(editGenreSelect);
+
+    let genreArr = [];
+    for (let i = 0; i < editGenreSelect.length; i++) {
+      if (editGenreSelect[i].value) {
+        genreArr.push(editGenreSelect[i].value);
+      }
+    }
+
+    let genre = genreArr;
+    let newObj = { title, author, genre, description };
+
+    updateUserData("books/", bookID, { ...newObj });
+    for (let i = 0; i < editInput.length; i++) {
+      editInput[i].value = "";
+    }
+    editContainer.style = "display: none";
+
+    customAlert("Book updated successfully");
+    bookTableAdd();
+  }
+});
