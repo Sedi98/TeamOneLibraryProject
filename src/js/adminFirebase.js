@@ -131,6 +131,7 @@ addBookBtn.addEventListener("click", () => {
 
   pushDataToDB("books/", newBook);
   customAlert("Book added successfully", "succ");
+  bookTableAdd();
 });
 
 // new genre modal cancel button
