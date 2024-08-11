@@ -518,6 +518,12 @@ tr:nth-child(even) {
 
 
 
+.btnBookEdit {
+  color: #155724;
+}
+
+
+
 @media screen and (max-width: 768px) {
   .loginForm {
     width: 80%;
