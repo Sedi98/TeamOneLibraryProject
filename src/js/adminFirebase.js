@@ -65,8 +65,8 @@ function loadGenres() {
 loadGenres();
 
 loginBtn.addEventListener("click", () => {
-  openPanel();
-  // LoginCheck()
+  // openPanel();
+  LoginCheck()
 });
 
 function LoginCheck() {
@@ -74,6 +74,11 @@ function LoginCheck() {
   let password = passInput.value.trim();
 
   readSingleDataFromDB("users/").then((data) => {
+
+    if (username == "" || password == "") {
+      customAlert("Please fill in all fields", "err");
+      return;
+    }
     if (username == data.username && password == data.password) {
       openPanel();
     } else {
