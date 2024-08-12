@@ -76,6 +76,8 @@ function LoginCheck() {
   readSingleDataFromDB("users/").then((data) => {
 
     if (username == "" || password == "") {
+      usrnameInput.style = "border: 1px solid red;";
+      passInput.style = "border: 1px solid red;";
       customAlert("Please fill in all fields", "err");
       return;
     }
@@ -169,7 +171,7 @@ addGenreBtn.addEventListener("click", () => {
   let select = document.createElement("select");
   select.classList.add("genreSelect");
   select.classList.add("addBookInput");
-  select.style.margin = "10px 0";
+  select.style.margin = "10px 0px";
 
   for (let i = 0; i < bookGenres.length; i++) {
     let option = document.createElement("option");
